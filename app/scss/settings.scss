@@ -5,8 +5,17 @@ $bpMobile: 767px;
 $bpPhone: 480px;
 
 // set font
-$baseFont: "Roboto", "Arial", sans-serif;
+$baseFont: "Lato", "Arial", "Tahoma" sans-serif;
 
 // set setting color
 $pageColor: #ffffff;
-$primaryColor: #7D90A5;
+$textColor: #0B1006;
+$primaryColor: #5CB600;
+$primaryColorHover: #7be400;
+$primaryColor: #4a9400;
+
+$darkColor: #373D4F;
+$darkColorHover: #506076;
+$darkColorActive: #191b25;
+
+$greenGradient: linear-gradient(73.1deg, #F2FFE6 1.1%, #E6F5D7 25.96%, #E1F3CE 99.32%), rgba(217, 255, 179, 0.5);
