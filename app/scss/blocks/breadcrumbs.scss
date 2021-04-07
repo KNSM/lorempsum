@@ -1,0 +1,34 @@
+.breadcrumbs {
+  margin-bottom: 60px;
+
+  @media (max-width: $bpTablet) {
+    margin-bottom: 50px;
+  }
+  @media (max-width: $bpMobile) {
+    margin-bottom: 40px;
+  }
+  @media (max-width: $bpPhone) {
+    margin-bottom: 30px;
+  }
+  .list {
+    display: flex;
+
+    &__item {
+      &:after {
+        content: '/';
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+
+    &__item-link {
+      color: $darkColor;
+    }
+  }
+}

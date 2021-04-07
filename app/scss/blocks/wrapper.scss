@@ -1,0 +1,14 @@
+.wrapper {
+  position: relative;
+  padding-top: 120px;
+
+  @media (max-width: $bpTablet) {
+    padding-top: 111px;
+  }
+  @media (max-width: $bpMobile) {
+    padding-top: 86px;
+  }
+  @media (max-width: $bpPhone) {
+    padding-top: 69px;
+  }
+}

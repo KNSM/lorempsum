@@ -6,6 +6,10 @@ html, body {
   color: $textColor;
   overflow-x: hidden;
   position: relative;
+
+  @media (max-width: $bpPhone) {
+    font-size: 12px;
+  }
 }
 
 main {
@@ -19,10 +23,25 @@ main {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: inherit;
+  color: $darkColor;
+  font-weight: 900;
+  line-height: 1.1;
 }
 
 h1, .h1 {
+  font-size: 46px;
+
+  @media (max-width: $bpTablet) {
+    font-size: 42px;
+  }
+
+  @media (max-width: $bpMobile) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $bpPhone) {
+    font-size: 35px;
+  }
 }
 
 h2, .h2 {

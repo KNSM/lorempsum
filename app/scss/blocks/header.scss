@@ -1,9 +1,12 @@
 .header {
   border-bottom: 2px #EFF3F6 solid;
   padding: 16px 0;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 19;
   background: #fff;
+  transition: .2s;
 
   @media (max-width: $bpMobile) {
     padding: 10px 0;
@@ -17,6 +20,7 @@
 
   &__logo {
     width: 200px;
+    transition: .2s;
 
     @media (max-width: $bpTablet) {
       width: 180px;
@@ -79,7 +83,7 @@
             z-index: 1;
             opacity: 0;
             visibility: hidden;
-            transition: .2s;
+            transition: 0s;
           }
 
           @media (max-width: $bpTablet) {
@@ -166,39 +170,18 @@
         }
 
         &.has-sublist {
+          display: flex;
+          align-items: center;
+
+          .icon {
+            font-size: 10px;
+            padding: 10px;
+            transition: .2s;
+            cursor: pointer;
+          }
+
           .list__item-link {
-            &:before {
-              content: '\e900';
-              font-family: 'icomoon';
-              position: absolute;
-              top: 50%;
-              right: 0;
-              transform: translate(-50%, -50%);
-              font-size: 8px;
-              transition: .2s;
-            }
-
-            @media (min-width: $bpTablet) {
-              &:hover {
-                &:before {
-                  transform: translate(-50%, -50%) rotate(-180deg);
-                }
-              }
-            }
-
-            &:active {
-              color: $darkColorActive;
-            }
-
-            @media (max-width: $bpTablet) {
-              padding-right: 40px;
-
-              &:before {
-                right: 20px;
-                transform: translate(50%, -50%);
-                font-size: 12px;
-              }
-            }
+            padding: 25px 0 25px 30px;
           }
 
 
@@ -208,12 +191,30 @@
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(100%);
+                transition: .2s;
+              }
+
+              .icon {
+                transform: rotate(180deg);
               }
             }
           }
 
-          .sublist-block {
-            display: none;
+          @media (max-width: $bpTablet) {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .icon {
+              padding: 10px 20px;
+            }
+
+            .list__item-link {
+              flex: 1 1 auto;
+              padding: 20px 0 20px 20px;
+            }
+
+            .sublist-block {
+              display: none;
+            }
           }
 
           &.-active {
@@ -221,10 +222,8 @@
               display: block;
             }
 
-            .list__item-link {
-              &:before {
-                transform: translate(50%, -50%) rotate(180deg);
-              }
+            .icon {
+              transform: rotate(180deg);
             }
           }
         }
@@ -240,6 +239,10 @@
         display: block;
         text-align: right;
 
+        &:hover {
+          color: $primaryColor;
+        }
+
         @media (max-width: $bpLaptop) {
           padding: 15px 20px;
         }
@@ -253,6 +256,8 @@
 
           &-link {
             text-align: left;
+            font-weight: 800;
+            padding: 20px;
           }
         }
       }
@@ -286,7 +291,6 @@
     }
   }
 
-
   &.-menu-opened {
     .header__nav {
       transform: translate(0, 100%);
@@ -303,6 +307,20 @@
         &:last-child {
           transform: translateY(-1px) rotate(45deg);
         }
+      }
+    }
+  }
+
+  &.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+
+    @media (min-width: $bpMobile) {
+      .header__logo {
+        width: 140px;
       }
     }
   }

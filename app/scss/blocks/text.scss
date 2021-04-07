@@ -1,0 +1,14 @@
+.text {
+
+  &-primary {
+    color: $primaryColor;
+  }
+
+  &-dark {
+    color: $darkColor;
+  }
+
+  &-nowrap {
+    white-space: nowrap;
+  }
+}

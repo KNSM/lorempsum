@@ -8,9 +8,22 @@ $(document).ready(function () {
     });
 
     //header-nav-mobile
-    $('.header__nav .list__item.has-sublist .list__item-link').click(function () {
+    $('.header__nav .list__item.has-sublist .icon-arrow-down').click(function () {
         $(this).parent().find('.sublist-block').slideToggle();
         $(this).parent().toggleClass('-active');
+    });
+
+
+    //header-scroll
+    $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop(),
+            header = $('.header');
+
+        if (scrollTop >  0) {
+            header.addClass('header-fixed');
+        } else {
+            header.removeClass('header-fixed');
+        }
     });
 
     //ov
