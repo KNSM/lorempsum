@@ -30,6 +30,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-uglify": "^3.0.2",
     "normalize.css": "^8.0.1",
+    "nouislider": "^14.7.0",
     "npm": "^6.0.0"
   }
 }

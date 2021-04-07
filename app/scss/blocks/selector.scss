@@ -1,0 +1,210 @@
+.selector {
+  width: 100%;
+  position: relative;
+
+  &-block {
+    position: relative;
+
+    .button {
+      position: relative;
+      text-align: left;
+      height: 42px;
+      cursor: pointer;
+      width: 100%;
+      background: #fff;
+      border: 1px solid #bdbdbd;
+      box-sizing: border-box;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 7px 16px;
+      transition: all .3s ease;
+      color: #333;
+      @media (max-width: $bpMobile) {
+        font-size: 14px;
+      }
+
+      &:after {
+        position: absolute;
+        top: 4px;
+        bottom: 0;
+        right: 13px;
+        content: "";
+        display: block;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        border: 5px solid transparent;
+        border-top-color: #bdbdbd;
+        transition: all .3s ease;
+        will-change: top;
+        box-sizing: border-box;
+      }
+    }
+
+    .tags {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100%;
+      padding: 0 0 0 20px;
+      margin-right: 35px;
+      display: block;
+      pointer-events: all;
+      overflow: hidden;
+
+      .tag {
+        padding: 0;
+        margin: 0 9px 0 0;
+        font-size: 16px;
+        height: 100%;
+        color: #333;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: left;
+
+        @media (max-width: $bpMobile) {
+          font-size: 14px;
+        }
+
+        .icon {
+          margin-right: 7px;
+          text-align: center;
+          color: $primaryColor;
+
+          &:before {
+            font-size: 18px;
+            width: 24px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .form-data {
+    position: absolute;
+    left: -999vw;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .selector-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 2;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: #f3f3f3;
+    border: 1px solid #bdbdbd;
+    border-top: none;
+    transition: opacity .3s ease, border 0s ease;
+    will-change: auto;
+    border-radius: 0 0 5px 5px;
+    max-height: 225px;
+
+    &__item {
+      position: relative;
+      width: 100%;
+      height: 44px;
+      padding: 0 50px 0 13px;
+      margin-bottom: 1px;
+      font-size: 16px;
+      line-height: 1.3;
+      height: 44px;
+      color: #666;
+      background-color: #fff;
+      cursor: pointer;
+      transition: .2s;
+      display: flex;
+      align-items: center;
+      @media (max-width: $bpMobile) {
+        font-size: 14px;
+      }
+
+      .icon {
+        margin-right: 7px;
+        text-align: center;
+        color: #666;
+
+        &:before {
+          font-size: 18px;
+          width: 24px;
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        background-color: #f3f3f3;
+        color: #333;
+      }
+
+      &.selected {
+        background-color: #f3f3f3;
+        color: #333;
+
+        &:before {
+          position: relative;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          display: inline-block;
+          margin: auto 10px auto 0;
+          content: "";
+          width: 20px;
+          height: 11px;
+          border-bottom: 3px solid #ff3f40;
+          border-left: 3px solid #ff3f40;
+          transform: rotate(-47deg);
+        }
+      }
+    }
+
+    &.no-check {
+      .selector-menu__item.selected {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &.-open {
+      opacity: 1;
+      pointer-events: all;
+      display: block;
+      transition: opacity .3s ease .1s;
+    }
+
+    .fakeScroll__track {
+      right: 0;
+      z-index: 1;
+      width: 12px;
+      background-color: #f3f3f3;
+      border-radius: 0 0 5px 0;
+
+      .fakeScroll__bar {
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          content: "";
+          display: block;
+          width: 4px;
+          height: 100%;
+          margin: auto;
+          background: #bdbdbd;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

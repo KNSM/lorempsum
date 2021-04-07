@@ -1,0 +1,26 @@
+.sidebar {
+  width: 360px;
+  margin-right: 30px;
+  flex: 0 0 auto;
+
+  &__item {
+    background: #FFFFFF;
+    border: 2px solid #EEF2F5;
+    box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
