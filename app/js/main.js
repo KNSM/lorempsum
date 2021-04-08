@@ -237,7 +237,24 @@ $(document).ready(function () {
                 arrows: true,
                 speed: 300,
                 prevArrow: $('.slider-recommend .slider-button-prev'),
-                nextArrow: $('.slider-recommend .slider-button-next')
+                nextArrow: $('.slider-recommend .slider-button-next'),
+                responsive: [
+                    {
+                      breakpoint: 768,
+                      settings: {
+                          slidesToShow: 1,
+                          variableWidth: true,
+                      }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            variableWidth: true,
+                            arrows: false,
+                        }
+                    }
+                ]
             });
         }
     });

@@ -104,6 +104,14 @@
         &:last-child {
           margin-bottom: 0;
         }
+
+        @media (max-width: $bpMobile) {
+          margin-bottom: 25px;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin-bottom: 25px;
+        }
       }
 
       &__text {
@@ -132,18 +140,43 @@
         border-radius: 30px;
         padding: 50px;
 
+        @media (min-width: $bpLaptop) and (max-width: $bpDesktop) {
+          padding: 50px 35px;
+        }
+
         @media (max-width: $bpTablet) {
           padding: 40px;
         }
 
         @media (max-width: $bpMobile) {
-          padding: 30px;
+          padding: 40px 30px;
         }
 
         @media (max-width: $bpPhone) {
           padding: 0;
           border-radius: 0;
           border: none;
+        }
+      }
+
+      &.section-popular {
+        border-radius: 30px;
+        padding: 50px;
+        background: linear-gradient(73.1deg, #F2FFE6 1.1%, #E6F5D7 25.96%, #E1F3CE 99.32%), rgba(217, 255, 179, 0.5);
+
+        @media (min-width: $bpLaptop) and (max-width: $bpDesktop) {
+          padding: 50px 35px;
+        }
+        @media (min-width: $bpMobile) and (max-width: $bpTablet) {
+          padding: 50px 35px;
+        }
+        @media (max-width: $bpMobile) {
+          padding: 40px 30px;
+        }
+        @media (max-width: $bpPhone) {
+          padding: 40px 20px;
+          margin: 0 -10px 40px;
+          border-radius: 0;
         }
       }
 

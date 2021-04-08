@@ -27,4 +27,8 @@
       margin-top: 0;
     }
   }
+
+  @media (max-width: $bpLaptop) {
+    display: none;
+  }
 }
