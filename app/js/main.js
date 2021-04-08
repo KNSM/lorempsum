@@ -7,6 +7,20 @@ $(document).ready(function () {
         fakeScrolls[fakeScroll].fakeScroll();
     }
 
+    //table comparison
+    $(function () {
+        var tableWrapper = $('.table-comparison-wrapper');
+
+        tableWrapper.each(function () {
+            var table = $(this).find('.table-comparison'),
+                tableArrow = $(this).find('.table__arrow');
+
+            tableArrow.click(function () {
+                table.toggleClass('-opened');
+            });
+        });
+    });
+
     // form-calc slider
     $(function () {
         var stepsSlider = document.getElementById('calc-slider');
@@ -191,5 +205,40 @@ $(document).ready(function () {
                 selectorMenu.removeClass('-open');
             });
         });
+    });
+
+    //accordion
+    $(function () {
+        var accordion = $('.accordion');
+
+        accordion.each(function () {
+            var accordionItem = $(this).find('.accordion__item');
+
+            accordionItem.each(function () {
+                var accordionInner = $(this).find('.accordion__inner'),
+                    accordionArrow = $(this).find('.accordion__arrow');
+
+                accordionArrow.click(function () {
+                    accordionItem.toggleClass('-active');
+                    accordionInner.slideToggle();
+                });
+            });
+        });
+    });
+
+    //slider slider-recommend
+    $(function () {
+        if ($('.slider.slider-recommend').length) {
+            $('.slider.slider-recommend .slider-wrapper').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false,
+                arrows: true,
+                speed: 300,
+                prevArrow: $('.slider-recommend .slider-button-prev'),
+                nextArrow: $('.slider-recommend .slider-button-next')
+            });
+        }
     });
 });

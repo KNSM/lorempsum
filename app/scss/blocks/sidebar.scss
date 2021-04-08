@@ -2,6 +2,7 @@
   width: 360px;
   margin-right: 30px;
   flex: 0 0 auto;
+  margin-bottom: 100px;
 
   &__item {
     background: #FFFFFF;
@@ -9,7 +10,10 @@
     box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
     border-radius: 30px;
     margin-bottom: 30px;
-    padding: 40px;
+
+    &.item-calc {
+      padding: 40px;
+    }
 
     &:last-child {
       margin-bottom: 0;

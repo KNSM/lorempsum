@@ -27,10 +27,13 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
+    "css": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-uglify": "^3.0.2",
     "normalize.css": "^8.0.1",
     "nouislider": "^14.7.0",
-    "npm": "^6.0.0"
+    "npm": "^6.0.0",
+    "reset": "^0.1.0",
+    "reset-css": "^5.0.1"
   }
 }

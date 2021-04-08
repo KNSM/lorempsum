@@ -45,6 +45,18 @@ h1, .h1 {
 }
 
 h2, .h2 {
+  font-size: 34px;
+  font-weight: 800;
+
+  @media (max-width: $bpTablet) {
+    font-size: 32px;
+  }
+  @media (max-width: $bpMobile) {
+    font-size: 28px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 24px;
+  }
 }
 
 h3, .h3 {

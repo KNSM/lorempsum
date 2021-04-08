@@ -1,0 +1,144 @@
+.slick-slide {
+  outline: none;
+}
+
+.slider {
+  &.slider-recommend {
+    position: relative;
+
+    .slider-button-prev {
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      border: 1px solid #EFF3F6;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+      transition: .2s;
+
+      .icon {
+        font-size: 10px;
+        transition: .2s;
+      }
+
+      &:hover {
+        background: $primaryColor;
+
+        .icon {
+          color: #fff;
+        }
+      }
+    }
+    .slider-button-next {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      border: 1px solid #EFF3F6;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+      transition: .2s;
+
+      .icon {
+        font-size: 10px;
+        transition: .2s;
+      }
+
+      &:hover {
+        background: $primaryColor;
+
+        .icon {
+          color: #fff;
+        }
+      }
+    }
+
+    .slider-wrapper {
+      margin: 0 -32px;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .slick-track {
+      padding: 20px 0;
+    }
+
+    .slide {
+      &__item {
+        margin: 0 12px;
+        background: #FFFFFF;
+        box-shadow: 0 0 20px rgba(180, 180, 180, 0.3);
+        border-radius: 20px;
+      }
+
+      &__image {
+        padding-top: 53%;
+        position: relative;
+        overflow: hidden;
+
+        .image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 100%;
+          min-width: 100%;
+          max-width: 1000%;
+        }
+      }
+
+      &__content {
+        padding: 30px;
+      }
+
+      &__title {
+        margin-bottom: 25px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .text {
+          font-weight: 800;
+          font-size: 18px;
+
+          @media (max-width: $bpPhone) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &__text {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .text {
+          font-size: 16px;
+
+          @media (max-width: $bpPhone) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

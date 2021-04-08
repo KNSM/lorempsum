@@ -1,4 +1,39 @@
 .content {
   flex: 1 1 auto;
   max-width: calc(100% - 390px);
+  
+  .table-comparison-wrapper {
+    position: relative;
+
+    .table__arrow {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      cursor: pointer;
+      border: 1px solid #eff3f6;
+      transition: .2s;
+
+      .icon {
+        font-size: 10px;
+        transition: .2s;
+      }
+
+      &:hover {
+        background: $primaryColor;
+
+        .icon {
+          color: #fff;
+        }
+      }
+    }
+  }
 }

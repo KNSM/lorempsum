@@ -12,7 +12,7 @@
       cursor: pointer;
       width: 100%;
       background: #fff;
-      border: 1px solid #bdbdbd;
+      border: 1px solid #eff3f6;
       box-sizing: border-box;
       border-radius: 5px;
       font-size: 16px;
@@ -58,7 +58,7 @@
         margin: 0 9px 0 0;
         font-size: 16px;
         height: 100%;
-        color: #333;
+        color: $textColor;
         background: none;
         border: none;
         outline: none;
@@ -159,11 +159,12 @@
           display: inline-block;
           margin: auto 10px auto 0;
           content: "";
-          width: 20px;
-          height: 11px;
+          width: 15px;
+          height: 8px;
           border-bottom: 3px solid #ff3f40;
           border-left: 3px solid #ff3f40;
           transform: rotate(-47deg);
+          flex: 0 0 auto;
         }
       }
     }

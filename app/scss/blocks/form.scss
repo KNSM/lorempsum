@@ -50,12 +50,37 @@
     }
 
     .input__box {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .input, .selector {
+        &.-big {
+          width: calc(60% - 8px);
+        }
+
+        &.-small {
+          width: calc(40% - 8px);
+
+          .tags {
+            padding: 0 0 0 10px;
+          }
+
+          .tag {
+            font-size: 14px;
+          }
+
+          .selector-menu {
+            .menu {
+              .selector-menu__item {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
 
       &.box-number {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
         .input-number {
           width: 45%;
           appearance: none;

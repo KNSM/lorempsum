@@ -1,0 +1,102 @@
+.table {
+
+  &.table-comparison {
+    border-radius: 20px;
+    border: 1px solid #EFF3F6;
+    width: 100%;
+    overflow-x: auto;
+
+    .table__item {
+      display: flex;
+      width: 100%;
+      min-width: 800px;
+
+      &:nth-child(2n + 1) {
+        background: #E2F3CF;
+      }
+
+      &:nth-child(n + 9) {
+        display: none;
+      }
+
+      .col {
+        padding: 20px 50px;
+        flex: 0 0 auto;
+
+        &.col-name {
+          width: 25%;
+        }
+
+        &.col-rating {
+          width: 18%;
+        }
+
+        &.col-summ {
+          width: 19%;
+        }
+
+        &.col-term {
+          width: 18%;
+        }
+
+        &.col-percent {
+          width: 20%;
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 300;
+
+          @media (max-width: $bpPhone) {
+            font-size: 14px;
+          }
+        }
+
+        &:first-child {
+          .text {
+            font-weight: 400;
+          }
+        }
+
+        @media (max-width: $bpMobile) {
+          padding: 20px 30px;
+        }
+
+        @media (max-width: $bpPhone) {
+          padding: 20px;
+        }
+      }
+
+      &.item-header {
+        .col {
+          padding: 25px 50px;
+          .text {
+            font-weight: 800;
+          }
+
+          @media (max-width: $bpMobile) {
+            padding: 25px 30px;
+          }
+
+          @media (max-width: $bpPhone) {
+            padding: 20px;
+          }
+        }
+      }
+    }
+
+    &.-opened {
+      .table__item {
+        &:nth-child(n + 9) {
+          display: flex;
+        }
+      }
+
+      & + .table__arrow {
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
