@@ -240,11 +240,11 @@ $(document).ready(function () {
                 nextArrow: $('.slider-recommend .slider-button-next'),
                 responsive: [
                     {
-                      breakpoint: 768,
-                      settings: {
-                          slidesToShow: 1,
-                          variableWidth: true,
-                      }
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            variableWidth: true,
+                        }
                     },
                     {
                         breakpoint: 480,
@@ -257,5 +257,38 @@ $(document).ready(function () {
                 ]
             });
         }
+    });
+
+    //review clump
+    $(function () {
+        var reviewText = $('.review__text .text');
+
+        reviewText.each(function (index, element) {
+            if ($(this).height() > 175) {
+                $(this).append('<div class="link-wrapper"><span class="dotted">...</span><a href="javascript:;" class="link link-text-primary">Читать далее</a></div>')
+                $clamp(element, {clamp: 7});
+
+                $(this).on('click', '.link', function () {
+                    $clamp(element, {clamp: 100});
+                    $(this).parent().addClass('-hidden');
+                });
+            }
+        });
+    });
+
+
+    //catalog content toggler
+    $(function () {
+        var catalogItem = $('.catalog__item');
+
+        catalogItem.each(function() {
+           var catalogArrow = $(this).find('.item-arrow'),
+               catalogContent = $(this).find('.col-content');
+
+           catalogArrow.click(function () {
+                $(this).parent().toggleClass('-active');
+                catalogContent.slideToggle();
+           });
+        });
     });
 });

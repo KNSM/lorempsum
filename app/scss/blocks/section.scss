@@ -172,11 +172,78 @@
         }
         @media (max-width: $bpMobile) {
           padding: 40px 30px;
+          margin: 0 -15px 40px;
+          border-radius: 0;
         }
         @media (max-width: $bpPhone) {
           padding: 40px 20px;
           margin: 0 -10px 40px;
+        }
+      }
+
+      &.section-reviews {
+        border-radius: 30px;
+        overflow: hidden;
+        border: 2px solid #EFF3F6;
+        background: linear-gradient(73.1deg, #F2FFE6 1.1%, #E6F5D7 25.96%, #E1F3CE 99.32%), rgba(217, 255, 179, 0.5);
+
+        @media (max-width: $bpMobile) {
+          margin: 0 -15px 40px;
           border-radius: 0;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin: 0 -10px 40px;
+        }
+
+        .section {
+          &__header {
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            margin-bottom: -10px;
+            justify-content: space-between;
+
+            .section__title {
+              margin-bottom: 10px;
+            }
+
+            .section__link {
+              margin-bottom: 10px;
+            }
+
+            @media (max-width: $bpTablet) {
+              padding: 40px;
+            }
+
+            @media (max-width: $bpMobile) {
+              padding: 40px 30px;
+              flex-wrap: wrap;
+            }
+
+            @media (max-width: $bpPhone) {
+              padding: 40px 20px;
+            }
+          }
+
+          &__footer {
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: $bpTablet) {
+              padding: 40px;
+            }
+
+            @media (max-width: $bpMobile) {
+              padding: 40px 30px;
+            }
+
+            @media (max-width: $bpPhone) {
+              padding: 40px 20px;
+            }
+          }
         }
       }
 

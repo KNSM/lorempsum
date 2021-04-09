@@ -291,7 +291,24 @@
     }
   }
 
+  &.header-fixed {
+    padding: 10px 0;
+    background: rgba(255,255,255,.8);
+
+    @media (min-width: $bpMobile) {
+      .header__logo {
+        width: 140px;
+      }
+    }
+
+    &:hover {
+      background: #fff;
+    }
+  }
+
   &.-menu-opened {
+    background: #fff;
+
     .header__nav {
       transform: translate(0, 100%);
     }
@@ -307,17 +324,6 @@
         &:last-child {
           transform: translateY(-1px) rotate(45deg);
         }
-      }
-    }
-  }
-
-  &.header-fixed {
-    padding: 10px 0;
-    background: rgba(255,255,255,.8);
-
-    @media (min-width: $bpMobile) {
-      .header__logo {
-        width: 140px;
       }
     }
   }
