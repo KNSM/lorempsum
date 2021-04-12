@@ -1,7 +1,7 @@
 .form {
 
   &.form-calc {
-    margin-top: 30px;
+    margin-top: 20px;
 
     &:first-child {
       margin-right: 0;
@@ -11,14 +11,12 @@
       background: #FFFFFF;
       border: 1px solid #EFF3F6;
       padding: 5px 16px;
-      font-size: 16px;
       height: 40px;
       border-radius: 10px;
 
       &::placeholder {
         color: #B6B6B6;
         font-family: $baseFont;
-        font-size: 14px;
       }
 
       @media (max-width: $bpPhone) {
@@ -31,21 +29,26 @@
     }
 
     .input__field {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
 
       &:last-child {
         margin-bottom: 0;
       }
 
       .label {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         display: block;
         color: rgba(11,16,6, .65);
-        font-size: 16px;
 
         &:last-child {
           margin-bottom: 0;
         }
+      }
+    }
+
+    .form__button {
+      .link {
+        width: 100%;
       }
     }
 
@@ -87,8 +90,20 @@
         }
 
         #calc-slider {
-          width: 100%;
+          width: calc(100% - 15px);
           margin-top: 30px;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 10px;
+            top: 50%;
+            right: 0;
+            transform: translate(100%, -50%);
+            background: #EFF3F6;
+          }
         }
       }
     }

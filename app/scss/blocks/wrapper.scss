@@ -1,15 +1,15 @@
 .wrapper {
   position: relative;
-  padding-top: 120px;
+  padding-top: 100px;
   overflow-y: hidden;
 
   @media (max-width: $bpTablet) {
-    padding-top: 111px;
+    padding-top: 91px;
   }
   @media (max-width: $bpMobile) {
-    padding-top: 86px;
+    padding-top: 82px;
   }
   @media (max-width: $bpPhone) {
-    padding-top: 69px;
+    padding-top: 67px;
   }
 }

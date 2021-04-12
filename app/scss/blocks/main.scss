@@ -1,4 +1,7 @@
 .main {
-  display: flex;
-  flex-wrap: wrap;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

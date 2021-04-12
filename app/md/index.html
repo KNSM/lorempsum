@@ -7,16 +7,19 @@
 <body class="b-page type-main lang-ru">
 <div class="wrapper">
     <!--@@include = ./parts/header.html-->
-    <div class="container">
-        <main class="main">
-            <!--@@include = ./parts/main/section-main.html-->
-            <!--@@include = ./parts/main/sidebar.html-->
-            <!--@@include = ./parts/main/content.html-->
-        </main>
-    </div>
+    <main class="main">
+        <!--@@include = ./parts/main/section-main.html-->
+        <div class="container">
+            <div class="main-wrapper">
+                <!--@@include = ./parts/main/sidebar.html-->
+                <!--@@include = ./parts/main/content.html-->
+            </div>
+        </div>
+    </main>
     <!--@@include = ./parts/footer.html-->
 </div>
 <div class="ov"></div>
+<div class="back-to-top"><i class="icon icon-arrow-up"></i></div>
 <!--@@include = parts/page-parts/scripts.html-->
 </body>
 </html>

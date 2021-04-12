@@ -7,6 +7,51 @@ $(document).ready(function () {
         fakeScrolls[fakeScroll].fakeScroll();
     }
 
+    // calc-modal
+
+    $(function () {
+        var linkCalc = $('.link.link-calc'),
+            linkFilter = $('.link.link-filter'),
+            linkSort = $('.link.link-sort'),
+            header = $('.header');
+
+        if ($(window).width() < 991) {
+            linkCalc.click(function () {
+                $('-window-active').removeClass('-active');
+                $('.sidebar__item.item-calc').toggleClass('-window-active');
+                ov.toggleClass('-window-active');
+            });
+
+            linkFilter.click(function () {
+                $('-window-active').removeClass('-active');
+                $('.sidebar__item.item-filter').toggleClass('-window-active');
+                ov.toggleClass('-window-active');
+            });
+        }
+    });
+
+    //back to top link
+    function backLink () {
+        var showHeight = $('.section-main').outerHeight(true) + $('.section-popular').outerHeight(true),
+            backLink = $('.back-to-top');
+
+        if ($(window).scrollTop() > showHeight) {
+            backLink.addClass('-active');
+        } else {
+            backLink.removeClass('-active');
+        }
+    }
+
+    backLink();
+
+    $(window).on('scroll', function(){
+       backLink();
+    });
+
+    $('.back-to-top').click(function () {
+        $('html,body').animate({scrollTop: 0}, 1100);
+    });
+
     //table comparison
     $(function () {
         var tableWrapper = $('.table-comparison-wrapper');
@@ -111,6 +156,7 @@ $(document).ready(function () {
 
     //header menu
     $('.header__menu').click(function () {
+        $('.-window-active').removeClass('-window-active');
         $('.header').toggleClass('-menu-opened -window-active');
         ov.toggleClass('-window-active');
     });

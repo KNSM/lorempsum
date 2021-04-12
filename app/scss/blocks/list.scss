@@ -43,7 +43,7 @@
 
       .text {
         color: $primaryColor;
-        font-size: 16px;
+        ;
 
         &:hover {
           color: $primaryColorHover;
@@ -74,7 +74,7 @@
       }
 
       .text {
-        font-size: 16px;
+        ;
 
         &:before {
           content: '';

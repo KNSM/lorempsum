@@ -110,6 +110,19 @@
                                 31.03.2021
                             </span>
                         </div>
+
+                        <div class="catalog__sort">
+                            <a href="javascript:;" class="link link-sort">
+                                <i class="icon icon-arrows-top-down"></i>
+                                Сортировать по
+                            </a>
+                        </div>
+                        <div class="catalog__filter">
+                            <a href="javascript:;" class="link link-filter">
+                                <i class="icon icon-filter"></i>
+                                Фильтры
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <ul class="catalog__content">
@@ -148,22 +161,25 @@
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -180,42 +196,50 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
@@ -228,22 +252,25 @@
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -260,42 +287,50 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
@@ -308,22 +343,25 @@
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -340,70 +378,173 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
+                    <li class="catalog__item">
+                        <div class="item-wrapper">
+                            <div class="col col-name">
+                                <img src="./img/logo-zaymer.png" alt="" class="image">
+                            </div>
+                            <div class="col col-summ">
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
+                                <span class="adv adv-white">
+                                    Заем <span class="text-nowrap">под 0%</span>
+                                </span>
+                            </div>
+                            <div class="col col-bet">
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
+                                <span class="adv adv-gray">
+                                    Первый заем <span class="text-nowrap">под 0%</span>
+                                </span>
+                            </div>
+                            <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
+                                <span class="text">
+                                    7-30 дней
+                                </span>
+                            </div>
+                            <div class="col col-orders">
+                                <span class="sup-text licence-number">
+                                    Лиц. № 003545
+                                </span>
+                                <a href="#" class="link link-primary">
+                                    Подать заявку
+                                </a>
+                                <span class="sup-text order-count">
+                                    13689 заявок
+                                </span>
+                            </div>
+                            <div class="col-content">
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-arrow">
+                            <i class="icon icon-arrow-down"></i>
+                        </div>
+                    </li>
+
                     <li class="catalog__item item-before-adv">
                         <div class="item-wrapper">
                             <div class="col col-name">
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -420,48 +561,57 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
+
                     <li class="adv__item">
                         <div class="adv__title">
                             <span class="text">
@@ -482,22 +632,25 @@
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -514,71 +667,81 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
-
                     <li class="catalog__item">
                         <div class="item-wrapper">
                             <div class="col col-name">
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -595,71 +758,81 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
-
                     <li class="catalog__item">
                         <div class="item-wrapper">
                             <div class="col col-name">
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -676,71 +849,81 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
-
                     <li class="catalog__item">
                         <div class="item-wrapper">
                             <div class="col col-name">
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -757,71 +940,81 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
-
                     <li class="catalog__item">
                         <div class="item-wrapper">
                             <div class="col col-name">
                                 <img src="./img/logo-zaymer.png" alt="" class="image">
                             </div>
                             <div class="col col-summ">
-                            <span class="text">
-                                <small class="small">до</small> 35 000 ₽
-                            </span>
+                                <span class="mobile-title">Сумма</span>
+                                <span class="text">
+                                    <small class="small">до</small> 35 000 ₽
+                                </span>
                                 <span class="adv adv-white">
-                                    Заем под 0%
+                                    Заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-bet">
-                            <span class="text">
-                                1%
-                            </span>
+                                <span class="mobile-title">Процент</span>
+                                <span class="text">
+                                    1%
+                                </span>
                                 <span class="adv adv-gray">
-                                    Первый заем под 0%
+                                    Первый заем <span class="text-nowrap">под 0%</span>
                                 </span>
                             </div>
                             <div class="col col-term">
+                                <span class="mobile-title">Срок</span>
                                 <span class="text">
                                     7-30 дней
                                 </span>
@@ -838,50 +1031,56 @@
                                 </span>
                             </div>
                             <div class="col-content">
-                                <p class="content-text">
-                                    Автоматизированный сервис «Займер» является лидером среди микрофинансовых
-                                    организаций России по количеству выданных кредитов.
-                                </p>
-                                <p class="content-text">
-                                    Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
-                                    банковскую карту или Яндекс. Кошелек.
-                                </p>
-                                <p class="content-text">
-                                    Собственная скоринговая система компании обеспечивает круглосуточное рассмотрение
-                                    заявок и мгновенное перечисление денег.
-                                </p>
-                                <ul class="list">
-                                    <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Ставка в день </span><span class="count">от 0 до 1%</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Время рассмотрения</span><span
-                                            class="count">5 минут</span></li>
-                                    <li class="list__item"><span class="text">Досрочное погашение</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Скорость выплаты</span><span
-                                            class="count">от 1 минуты</span></li>
-                                    <li class="list__item"><span class="text">График работы</span><span class="count">Круглосуточно</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Способ выплат</span><span class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Продление</span><span
-                                            class="count">Да</span></li>
-                                    <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
-                                    </li>
-                                    <li class="list__item"><span class="text">Срок</span><span
-                                            class="count">7 - 30 дней</span></li>
-                                </ul>
+                                <div class="col-content-wrapper">
+                                    <div class="content__text">
+                                        <p class="text">
+                                            Автоматизированный сервис «Займер» является лидером среди микрофинансовых
+                                            организаций России по количеству выданных кредитов.
+                                        </p>
+                                        <p class="text">
+                                            Клиенты с любой кредитной историей могут получить от 2000 до 30000 рублей на
+                                            банковскую карту или Яндекс. Кошелек.
+                                        </p>
+                                        <p class="text">
+                                            Собственная скоринговая система компании обеспечивает круглосуточное
+                                            рассмотрение
+                                            заявок и мгновенное перечисление денег.
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li class="list__item"><span class="text">Сумма</span><span class="count">2 000 -30 000 ₽</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Ставка в день </span><span
+                                                class="count">от 0 до 1%</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Время рассмотрения</span><span
+                                                class="count">5 минут</span></li>
+                                        <li class="list__item"><span class="text">Досрочное погашение</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Скорость выплаты</span><span
+                                                class="count">от 1 минуты</span></li>
+                                        <li class="list__item"><span class="text">График работы</span><span
+                                                class="count">Круглосуточно</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Способ выплат</span><span
+                                                class="count">Банк. карта или счёт, наличные, Contact, Qiwi, ЮMoney, Золотая корона</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Документы</span><span class="count">Паспорт</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Продление</span><span
+                                                class="count">Да</span></li>
+                                        <li class="list__item"><span class="text">Возраст</span><span class="count">от 18 до 75</span>
+                                        </li>
+                                        <li class="list__item"><span class="text">Срок</span><span
+                                                class="count">7 - 30 дней</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="item-arrow">
                             <i class="icon icon-arrow-down"></i>
                         </div>
                     </li>
-
-
                 </ul>
             </div>
         </div>

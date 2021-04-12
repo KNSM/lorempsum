@@ -1,12 +1,13 @@
 .footer {
   background: #FFFFFF;
   box-shadow: 0 0 30px rgba(180, 180, 180, 0.3);
+  margin-top: 40px;
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 0;
+    padding: 20px 0;
 
     &:last-child {
       border-bottom: none;
@@ -15,11 +16,8 @@
     @media (max-width: $bpTablet) {
       flex-wrap: wrap;
     }
-    @media (max-width: $bpMobile) {
-      padding: 25px 0;
-    }
     @media (max-width: $bpPhone) {
-      padding: 20px 0;
+      padding: 15px 0;
     }
   }
 
@@ -32,8 +30,8 @@
   }
 
   &__logo {
-    width: 200px;
-    margin-right: 86px;
+    width: 180px;
+    margin-right: 40px;
 
     @media (max-width: $bpLaptop) {
       margin-right: 20px;
@@ -60,7 +58,6 @@
       .title {
         margin: 0 7px;
         .text {
-          font-size: 16px;
           color: rgba(0,0,0,.65);
         }
 
@@ -76,7 +73,7 @@
         .icon {
           color: #FFEC19;
           margin-right: 8px;
-          font-size: 18px;
+          font-size: 16px;
 
           &:last-child {
             margin-right: 0;
@@ -90,7 +87,6 @@
 
       .count {
         .text {
-          font-size: 16px;
           color: rgba(0,0,0,.65);
         }
       }
@@ -110,9 +106,6 @@
 
         .stars {
           margin: 0 7px 10px;
-          .icon {
-            font-size: 16px;
-          }
         }
 
         .count {
@@ -126,11 +119,6 @@
 
     @media (max-width: $bpPhone) {
       .rating-block {
-        .stars {
-          .icon {
-            font-size: 14px;
-          }
-        }
         .count {
           .text {
             font-size: 12px;
@@ -146,9 +134,8 @@
     margin-left: 40px;
 
     .title {
-      margin-right: 60px;
+      margin-right: 40px;
       .text {
-        font-size: 16px;
         color: rgba(0,0,0,.65);
       }
     }
@@ -180,9 +167,9 @@
   }
 
   &__bottom {
-    padding: 40px 0 85px;
+    padding: 20px 0 25px;
     background: url("../img/logo-image.png") 90% center no-repeat;
-    background-size: 8%;
+    background-size: 5%;
 
     @media (max-width: $bpTablet) {
       padding: 35px 0 60px;
@@ -197,7 +184,7 @@
   }
 
   &__nav {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     width: 1150px;
     max-width: 100%;
 
@@ -227,7 +214,7 @@
         &-link {
           font-weight: 800;
           color: rgba(0,0,0,.65);
-          font-size: 16px;
+          ;
           display: block;
 
           &:hover {
@@ -256,7 +243,7 @@
     max-width: 100%;
 
     .text {
-      font-size: 16px;
+      ;
       color: rgba(0,0,0,.65);
     }
     

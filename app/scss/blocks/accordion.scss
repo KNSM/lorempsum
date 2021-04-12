@@ -3,7 +3,7 @@
     .accordion__item {
       border-bottom: 2px solid #EFF3F6;
       position: relative;
-      padding: 40px;
+      padding: 20px;
 
       &:last-child {
         border-bottom: none;
@@ -26,7 +26,6 @@
           }
 
           &-link {
-            font-size: 16px;
             color: #535556;
 
             &:hover {

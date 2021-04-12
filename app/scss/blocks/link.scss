@@ -27,17 +27,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px;
+    padding: 10px 20px;
     background: #fff;
-    height: 60px;
-    font-size: 16px;
     border: 1px solid #EFF3F6;
     border-radius: 10px;
-    box-shadow: 0 0 30px #BFDF9F;
+    box-shadow: 0 0 20px #BFDF9F;
 
     &:hover {
       background: $primaryColor;
       color: #fff;
+      box-shadow: none;
 
       .icon {
         color: #fff;
@@ -50,9 +49,7 @@
     }
 
     @media (max-width: $bpPhone) {
-      height: 50px;
       font-size: 14px;
-      padding: 0 30px;
       box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
       display: flex;
       width: 100%;
@@ -71,11 +68,13 @@
     background: $primaryColor;
     box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
     border-radius: 10px;
-    font-size: 16px;
-    padding: 0 30px;
-    height: 60px;
+    padding: 10px 20px;
     color: #fff;
     text-align: center;
+    line-height: 1.1;
+    border: none;
+    outline: none;
+    cursor: pointer;
 
     .icon {
       &:first-child {
@@ -95,8 +94,6 @@
     }
 
     @media (max-width: $bpPhone) {
-      height: 50px;
-      font-size: 14px;
       box-shadow: 0 0 8px rgba(229, 229, 229, 0.3);
       display: flex;
       width: 100%;

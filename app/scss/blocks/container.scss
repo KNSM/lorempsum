@@ -1,8 +1,12 @@
 .container {
-  width: 1600px;
+  width: 1240px;
   max-width: 100%;
   margin: auto;
-  padding: 0 15px;
+  padding: 0 20px;
+
+  @media (max-width: $bpTablet) {
+    padding: 0 15px;
+  }
 
   @media (max-width: $bpPhone) {
     padding: 0 10px;

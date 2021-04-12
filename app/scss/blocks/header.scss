@@ -1,16 +1,12 @@
 .header {
   border-bottom: 2px #EFF3F6 solid;
-  padding: 16px 0;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 19;
   background: #fff;
   transition: .2s;
-
-  @media (max-width: $bpMobile) {
-    padding: 10px 0;
-  }
 
   &__wrapper {
     display: flex;
@@ -19,11 +15,11 @@
   }
 
   &__logo {
-    width: 200px;
+    width: 180px;
     transition: .2s;
 
     @media (max-width: $bpTablet) {
-      width: 180px;
+      width: 160px;
     }
 
     @media (max-width: $bpMobile) {
@@ -45,15 +41,15 @@
       transform: translate(100%, 100%);
       transition: .2s;
       background: #fff;
-      height: calc(100vh - 111px);
+      height: calc(100vh - 91px);
       overflow-y: auto;
     }
 
     @media (max-width: $bpMobile) {
-      height: calc(100vh - 86px);
+      height: calc(100vh - 82px);
     }
     @media (max-width: $bpPhone) {
-      height: calc(100vh - 69px);
+      height: calc(100vh - 67px);
     }
 
     .list {
@@ -61,7 +57,7 @@
       align-items: center;
 
       &__item {
-        margin-right: 60px;
+        margin-right: 20px;
         position: relative;
 
         @media (max-width: $bpDesktop) {
@@ -71,10 +67,10 @@
         .sublist-block {
           @media (min-width: $bpTablet) {
             position: absolute;
-            padding: 50px 70px;
+            padding: 30px 50px;
             background: #fff;
             border: 1px solid #EEF2F5;
-            box-shadow: 0 0 30px rgba(180, 180, 180, 0.3);
+            box-shadow: 0 0 25px rgba(180, 180, 180, 0.3);
             border-radius: 30px;
             bottom: 0;
             left: 0;
@@ -92,7 +88,7 @@
 
           .sublist {
             width: max-content;
-            margin-bottom: -30px;
+            margin-bottom: -10px;
 
             @media (max-width: $bpTablet) {
               margin-bottom: 0;
@@ -101,7 +97,7 @@
 
             &__item {
               margin-bottom: 10px;
-              margin-right: 76px;
+              margin-right: 35px;
 
               &-link {
                 padding: 10px 0;
@@ -126,8 +122,7 @@
               margin-bottom: 20px;
 
               .text {
-                font-weight: 800;
-                font-size: 16px;
+                font-weight: 800;;
                 text-transform: uppercase;
                 color: $darkColor;
               }
@@ -181,7 +176,7 @@
           }
 
           .list__item-link {
-            padding: 25px 0 25px 30px;
+            padding: 15px 0 15px 20px;
           }
 
 
@@ -234,7 +229,7 @@
         text-transform: uppercase;
         color: $darkColor;
         position: relative;
-        padding: 25px 30px;
+        padding: 15px 20px;
         z-index: 2;
         display: block;
         text-align: right;
@@ -293,7 +288,14 @@
 
   &.header-fixed {
     padding: 10px 0;
-    background: rgba(255,255,255,.8);
+    background: rgba(255, 255, 255, .8);
+
+    @media (max-width: $bpTablet) {
+      background: #fff;
+      .header__nav {
+        height: calc(100vh - 82px);
+      }
+    }
 
     @media (min-width: $bpMobile) {
       .header__logo {
