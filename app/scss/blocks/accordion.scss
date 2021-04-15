@@ -1,5 +1,9 @@
 .accordion {
   &.accordion-sidebar-filter {
+    @media (max-width: $bpPhone) {
+      box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+    }
+
     .accordion__item {
       border-bottom: 2px solid #EFF3F6;
       position: relative;
@@ -72,7 +76,7 @@
         margin-bottom: 15px;
 
         .text {
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 800;
 
         }

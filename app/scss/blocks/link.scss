@@ -26,6 +26,7 @@
   &.link-white {
     display: inline-flex;
     align-items: center;
+    min-height: 42px;
     justify-content: center;
     padding: 10px 20px;
     background: #fff;
@@ -35,6 +36,7 @@
 
     &:hover {
       background: $primaryColor;
+      border: 1px $primaryColor solid;
       color: #fff;
       box-shadow: none;
 
@@ -72,6 +74,7 @@
     color: #fff;
     text-align: center;
     line-height: 1.1;
+    min-height: 42px;
     border: none;
     outline: none;
     cursor: pointer;

@@ -14,21 +14,25 @@
     display: flex;
 
     &__item {
+      opacity: .6;
+      color: $darkColor;
+
       &:after {
         content: '/';
         margin-left: 5px;
         margin-right: 5px;
       }
       &:last-child {
+        opacity: 1;
+        font-weight: 500;
         &:after {
           display: none;
         }
       }
-    }
 
-
-    &__item-link {
-      color: $darkColor;
+      &:not(:last-child):hover {
+        color: $primaryColor;
+      }
     }
   }
 }

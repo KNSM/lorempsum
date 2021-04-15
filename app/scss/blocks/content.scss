@@ -6,8 +6,9 @@
     max-width: 100%;
     width: 100%;
   }
-  
-  .table-comparison-wrapper {
+
+  .table-comparison-block {
+    max-width: 100%;
     position: relative;
 
     .table__arrow {
@@ -40,6 +41,12 @@
         }
       }
     }
+  }
+
+  .table-comparison-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .card-block {

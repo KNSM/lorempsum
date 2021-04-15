@@ -1,5 +1,39 @@
 .list {
 
+  &.list-sort {
+    box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+    .list__item {
+      border-bottom: 1px solid #EFF3F6;
+
+      &:first-child {
+        border-top: 1px solid #EFF3F6;
+      }
+
+      .list__item-link {
+        display: flex;
+        padding: 25px 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &.-active {
+        .list__item-link {
+          .text {
+            color: $primaryColor;
+            font-weight: 800;
+          }
+
+          &:after {
+            content: '\e911';
+            font-family: 'icomoon';
+            font-size: 12px;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
   &.list-media {
     display: flex;
     align-items: center;
@@ -43,7 +77,6 @@
 
       .text {
         color: $primaryColor;
-        ;
 
         &:hover {
           color: $primaryColorHover;
@@ -74,8 +107,6 @@
       }
 
       .text {
-        ;
-
         &:before {
           content: '';
           width: 5px;

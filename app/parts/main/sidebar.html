@@ -6,34 +6,55 @@
             </span>
         </div>
 
+        <div class="mobile-header">
+            <span class="text">Калькулятор</span><i class="icon icon-close"></i>
+        </div>
+
         <form action="#" class="form form-calc">
-            <div class="input__field">
-                <label class="label">
-                    Сумма займа, ₽
-                </label>
+            <div class="input__field-wrapper">
+                <div class="input__field">
+                    <label class="label">
+                        Сумма займа, ₽
+                    </label>
 
-                <div class="input__box box-number">
-                    <input type="text" class="input input-number" name="calc-sum-from" placeholder="0т 0"
-                           id="input-calc-1">
-                    <input type="text" class="input input-number" name="calc-sum-to" placeholder="До 20000000"
-                           id="input-calc-2">
-                    <div id="calc-slider"></div>
+                    <div class="input__box box-number">
+                        <input type="text" class="input input-number" name="calc-sum-from" placeholder="0т 0"
+                               id="input-calc-1">
+                        <input type="text" class="input input-number" name="calc-sum-to" placeholder="До 20000000"
+                               id="input-calc-2">
+                        <div id="calc-slider"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input__field">
-                <label for="form-calc-term-count" class="label">
-                    Срок займа
-                </label>
+                <div class="input__field">
+                    <label for="form-calc-term-count" class="label">
+                        Срок займа
+                    </label>
 
-                <div class="input__box">
-                    <input type="number" class="input input-number -big" placeholder="Любой"
-                           name="form-calc-term-count">
-                    <div class="selector -small">
-                        <select id="form-calc-term-count" name="form-calc-term-value" class="select">
-                            <option value="1" selected="selected">Дней</option>
-                            <option value="2">Недель</option>
-                            <option value="3">Месяцев</option>
-                            <option value="4">Лет</option>
+                    <div class="input__box">
+                        <input type="number" class="input input-number -big" placeholder="Любой"
+                               name="form-calc-term-count">
+                        <div class="selector -small">
+                            <select id="form-calc-term-count" name="form-calc-term-value" class="select">
+                                <option value="1" selected="selected">Дней</option>
+                                <option value="2">Недель</option>
+                                <option value="3">Месяцев</option>
+                            </select>
+                            <div class="selector-menu">
+                                <div class="menu"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input__field">
+                    <label for="form-calc-withdrawal" class="label">
+                        Вариант выдачи
+                    </label>
+                    <div class="selector">
+                        <select id="form-calc-withdrawal" name="form-calc-withdrawal" class="select">
+                            <option value="1" selected="selected">Любой</option>
+                            <option value="2">Наличными</option>
+                            <option value="3">Перевод на карту</option>
+                            <option value="4">Перевод на электорнный кошелек</option>
                         </select>
                         <div class="selector-menu">
                             <div class="menu"></div>
@@ -41,28 +62,16 @@
                     </div>
                 </div>
             </div>
-            <div class="input__field">
-                <label for="form-calc-withdrawal" class="label">
-                    Вариант выдачи
-                </label>
-                <div class="selector">
-                    <select id="form-calc-withdrawal" name="form-calc-withdrawal" class="select">
-                        <option value="1" selected="selected">Любой</option>
-                        <option value="2">Наличными</option>
-                        <option value="3">Перевод на карту</option>
-                        <option value="4">Перевод на электорнный кошелек</option>
-                    </select>
-                    <div class="selector-menu">
-                        <div class="menu"></div>
-                    </div>
-                </div>
-            </div>
             <div class="form__button">
-                <button type="submit" class="link link-primary">Рассчитать</button>
+                <button type="button" class="link link-primary">Рассчитать</button>
             </div>
         </form>
     </div>
     <div class="sidebar__item item-filter">
+
+        <div class="mobile-header">
+            <span class="text">Фильтры</span><i class="icon icon-close"></i>
+        </div>
         <div class="accordion accordion-sidebar-filter">
             <div class="accordion__item">
                 <div class="accordion__content">

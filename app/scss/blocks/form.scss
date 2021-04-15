@@ -1,7 +1,11 @@
 .form {
 
   &.form-calc {
-    margin-top: 20px;
+    padding: 20px;
+
+    @media (max-width: $bpPhone) {
+      box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+    }
 
     &:first-child {
       margin-right: 0;
@@ -47,6 +51,7 @@
     }
 
     .form__button {
+      margin-top: 20px;
       .link {
         width: 100%;
       }

@@ -7,13 +7,13 @@ $(document).ready(function () {
         fakeScrolls[fakeScroll].fakeScroll();
     }
 
-    // calc-modal
-
-    $(function () {
+    // mobile-modal
+    function modals() {
         var linkCalc = $('.link.link-calc'),
             linkFilter = $('.link.link-filter'),
             linkSort = $('.link.link-sort'),
-            header = $('.header');
+            iconSidebarClose = $('.sidebar__item .icon-close'),
+            iconModalClose = $('.modal .icon-close');
 
         if ($(window).width() < 991) {
             linkCalc.click(function () {
@@ -27,11 +27,31 @@ $(document).ready(function () {
                 $('.sidebar__item.item-filter').toggleClass('-window-active');
                 ov.toggleClass('-window-active');
             });
+
+            linkSort.click(function () {
+                $('-window-active').removeClass('-active');
+                $('.modal-sort').toggleClass('-window-active');
+                ov.toggleClass('-window-active');
+            });
+
+            iconModalClose.click(function () {
+                $('.modal.-window-active').removeClass('-window-active');
+                ov.toggleClass('-window-active');
+            });
+            iconSidebarClose.click(function () {
+                $('.sidebar__item.-window-active').removeClass('-window-active');
+                ov.toggleClass('-window-active');
+            });
         }
+    }
+
+    modals();
+    $(window).on('resize', function () {
+        modals();
     });
 
     //back to top link
-    function backLink () {
+    function backLink() {
         var showHeight = $('.section-main').outerHeight(true) + $('.section-popular').outerHeight(true),
             backLink = $('.back-to-top');
 
@@ -44,8 +64,8 @@ $(document).ready(function () {
 
     backLink();
 
-    $(window).on('scroll', function(){
-       backLink();
+    $(window).on('scroll', function () {
+        backLink();
     });
 
     $('.back-to-top').click(function () {
@@ -54,14 +74,14 @@ $(document).ready(function () {
 
     //table comparison
     $(function () {
-        var tableWrapper = $('.table-comparison-wrapper');
+        var tableBlock = $('.table-comparison-block');
 
-        tableWrapper.each(function () {
-            var table = $(this).find('.table-comparison'),
+        tableBlock.each(function () {
+            var tableWrapper = $(this).find('.table-comparison-wrapper'),
                 tableArrow = $(this).find('.table__arrow');
 
             tableArrow.click(function () {
-                table.toggleClass('-opened');
+                tableWrapper.toggleClass('-opened');
             });
         });
     });
@@ -74,11 +94,11 @@ $(document).ready(function () {
         var inputs = [input0, input1];
 
         noUiSlider.create(stepsSlider, {
-            start: [0, 200000],
+            start: [0, 100000],
             connect: true,
             range: {
                 'min': [0],
-                'max': 20000
+                'max': 100000
             },
             step: 500,
             format: wNumb({
@@ -156,9 +176,13 @@ $(document).ready(function () {
 
     //header menu
     $('.header__menu').click(function () {
-        $('.-window-active').removeClass('-window-active');
         $('.header').toggleClass('-menu-opened -window-active');
-        ov.toggleClass('-window-active');
+        if ($('.sidebar__item').hasClass('-window-active') || $('.modal-sort').hasClass('-window-active')) {
+            $('.sidebar__item.-window-active').removeClass('-window-active');
+            $('.modal-sort.-window-active').removeClass('-window-active');
+        } else {
+            ov.toggleClass('-window-active');
+        }
     });
 
     //header-nav-mobile
@@ -166,7 +190,6 @@ $(document).ready(function () {
         $(this).parent().find('.sublist-block').slideToggle();
         $(this).parent().toggleClass('-active');
     });
-
 
     //header-scroll
     $(window).scroll(function () {
@@ -262,10 +285,11 @@ $(document).ready(function () {
 
             accordionItem.each(function () {
                 var accordionInner = $(this).find('.accordion__inner'),
-                    accordionArrow = $(this).find('.accordion__arrow');
+                    accordionArrow = $(this).find('.accordion__arrow'),
+                    currentItem = $(this);
 
                 accordionArrow.click(function () {
-                    accordionItem.toggleClass('-active');
+                    currentItem.toggleClass('-active');
                     accordionInner.slideToggle();
                 });
             });
@@ -323,18 +347,196 @@ $(document).ready(function () {
     });
 
 
-    //catalog content toggler
+    //catalog
     $(function () {
-        var catalogItem = $('.catalog__item');
+        var catalog = $('.catalog');
 
-        catalogItem.each(function() {
-           var catalogArrow = $(this).find('.item-arrow'),
-               catalogContent = $(this).find('.col-content');
+        catalog.each(function () {
+            var catalogContent = $(this).find('.catalog__content'),
+                catalogItem = $(this).find($('.catalog__item')),
+                itemHeader = $(this).find($('.catalog__item.item-header')),
+                colSummButton = itemHeader.find('.col-summ'),
+                colBetButton = itemHeader.find('.col-bet'),
+                colTermButton = itemHeader.find('.col-term'),
+                advItem = $(this).find('.adv__item')[0],
+                colArray = [];
 
-           catalogArrow.click(function () {
-                $(this).parent().toggleClass('-active');
-                catalogContent.slideToggle();
-           });
+            Array.prototype.insert = function ( index, item ) {
+                this.splice( index, 0, item );
+            };
+
+            for (var i = 1; i < catalogItem.length; i++) {
+                colArray.push(catalogItem[i]);
+            }
+
+            colArray.insert(4, advItem);
+
+            function sortSummFromMax() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-summ .count').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-summ .count').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a < b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortSummFromMin() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-summ .count').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-summ .count').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a > b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortBetFromMin() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-bet .count').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-bet .count').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a > b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortBetFromMax() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-bet .count').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-bet .count').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a < b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortTermFromMax() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(b).find('.col-term .count-from').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a < b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortTermFromMin() {
+
+                colArray.splice(4,1);
+
+                colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(b).find('.col-term .count-from').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a > b ? 1 : -1
+                });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            colSummButton.click(function () {
+                if ($(this).hasClass('from-min')) {
+                    sortSummFromMax();
+                    $(this).removeClass('from-min');
+                    $(this).addClass('from-max');
+                } else {
+                    sortSummFromMin();
+                    $(this).removeClass('from-max');
+                    $(this).addClass('from-min');
+                }
+            });
+
+            colBetButton.click(function () {
+                if ($(this).hasClass('from-min')) {
+                    sortBetFromMax();
+                    $(this).removeClass('from-min');
+                    $(this).addClass('from-max');
+                } else {
+                    sortBetFromMin();
+                    $(this).removeClass('from-max');
+                    $(this).addClass('from-min');
+                }
+            });
+
+            colTermButton.click(function () {
+                if ($(this).hasClass('from-min')) {
+                    sortTermFromMax();
+                    $(this).removeClass('from-min');
+                    $(this).addClass('from-max');
+                } else {
+                    sortTermFromMin();
+                    $(this).removeClass('from-max');
+                    $(this).addClass('from-min');
+                }
+            });
+
+            catalogItem.each(function () {
+                //content toggler
+                var catalogArrow = $(this).find('.item-arrow'),
+                    colContent = $(this).find('.col-content');
+
+                catalogArrow.click(function () {
+                    $(this).parent().toggleClass('-active');
+                    colContent.slideToggle();
+                });
+            });
         });
     });
 });

@@ -1,0 +1,58 @@
+.modal {
+
+  &.modal-sort {
+
+    @media (min-width: $bpTablet) {
+      display: none;
+    }
+
+    width: 300px;
+    background: #fff;
+    height: calc(100vh - 82px);
+    position: fixed;
+    overflow-y: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    transition: .2s;
+    transform: translateX(-100%);
+
+    &.-window-active {
+      transform: translateX(0);
+    }
+
+    @media (max-width: $bpPhone) {
+      width: 100%;
+      max-height: calc(100vh - 68px);
+      height: auto;
+      transform: translateY(100%);
+
+      &.-window-active {
+        transform: translateY(0);
+      }
+    }
+
+    .modal__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .text {
+        font-weight: 800;
+        font-size: 14px;
+        color: rgba(11,16,6,.65);
+        padding: 20px;
+      }
+
+      .icon {
+        color: rgba(96,99,93,45);
+        padding: 20px;
+        font-size: 10px;
+
+        @media (min-width: $bpPhone) {
+          display: none;
+        }
+      }
+    }
+  }
+}
