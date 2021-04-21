@@ -86,6 +86,10 @@
         }
       }
 
+      .breadcrumbs {
+        margin-bottom: 60px;
+      }
+
       .section__button {
         display: none;
 
@@ -233,6 +237,15 @@
           margin-bottom: 0;
         }
       }
+    }
+  }
+}
+
+.type-news-detail {
+  .section {
+
+    &.section-main {
+      padding: 30px 0;
     }
   }
 }

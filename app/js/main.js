@@ -349,7 +349,21 @@ $(document).ready(function () {
 
     //catalog
     $(function () {
-        var catalog = $('.catalog');
+        var catalog = $('.catalog'),
+            calcForm = $('.form-calc');
+
+        var inputSumFrom = calcForm.find('[name="calc-sum-from"]'),
+            inputSumTo = calcForm.find('[name="calc-sum-to"]'),
+            inputTermCount = calcForm.find('[name="form-calc-term-count"]'),
+            inputTermValue = calcForm.find('[name="form-calc-term-value"]'),
+            inputWithDrawal = calcForm.find('[name="form-calc-withdrawal"]'),
+            calcFormButton = calcForm.find('.form__button .link');
+
+            $('[name="form-calc-term-count"]').bind("change keyup input click", function() {
+                if (this.value.match(/[^0-9]/g)) {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                }
+            });
 
         catalog.each(function () {
             var catalogContent = $(this).find('.catalog__content'),
@@ -361,8 +375,8 @@ $(document).ready(function () {
                 advItem = $(this).find('.adv__item')[0],
                 colArray = [];
 
-            Array.prototype.insert = function ( index, item ) {
-                this.splice( index, 0, item );
+            Array.prototype.insert = function (index, item) {
+                this.splice(index, 0, item);
             };
 
             for (var i = 1; i < catalogItem.length; i++) {
@@ -373,7 +387,7 @@ $(document).ready(function () {
 
             function sortSummFromMax() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-summ .count').text().replace(/\s/g, ''));
@@ -393,7 +407,7 @@ $(document).ready(function () {
 
             function sortSummFromMin() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-summ .count').text().replace(/\s/g, ''));
@@ -413,7 +427,7 @@ $(document).ready(function () {
 
             function sortBetFromMin() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-bet .count').text().replace(/\s/g, ''));
@@ -433,7 +447,7 @@ $(document).ready(function () {
 
             function sortBetFromMax() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-bet .count').text().replace(/\s/g, ''));
@@ -453,7 +467,7 @@ $(document).ready(function () {
 
             function sortTermFromMax() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
@@ -473,7 +487,7 @@ $(document).ready(function () {
 
             function sortTermFromMin() {
 
-                colArray.splice(4,1);
+                colArray.splice(4, 1);
 
                 colArray.sort(function (a, b) {
                     a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
@@ -483,6 +497,54 @@ $(document).ready(function () {
                         ? 0
                         : a > b ? 1 : -1
                 });
+
+                colArray.insert(4, advItem);
+
+                for (i = 0; i < colArray.length; i++) {
+                    catalogContent.append(colArray[i]);
+                }
+            }
+
+            function sortByCalcForm() {
+                colArray.splice(4, 1);
+
+                /*colArray.sort(function (a, b) {
+                    a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
+                    b = parseFloat($(b).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(b).find('.col-term .count-from').text().replace(/\s/g, ''));
+
+                    return a === b
+                        ? 0
+                        : a > b ? 1 : -1
+                }); */
+
+                var inputSumFromVal = calcForm.find('[name="calc-sum-from"]').val(),
+                    inputSumToVal = calcForm.find('[name="calc-sum-to"]').val(),
+                    inputTermCountVal = calcForm.find('[name="form-calc-term-count"]').val(),
+                    inputTermValueVal = calcForm.find('[name="form-calc-term-value"]').val(),
+                    inputWithDrawalVal = calcForm.find('[name="form-calc-withdrawal"]').val(),
+                    inputTerm = 0;
+
+                if (inputTermValueVal === 'Day' && inputTermCountVal > 0) {
+                    inputTerm = inputTermCountVal;
+                } else if (inputTermValueVal === 'Week' && inputTermCountVal > 0) {
+                    inputTerm = inputTermCountVal*7;
+                } else if (inputTermValueVal === 'Month' && inputTermCountVal > 0) {
+                    inputTerm = inputTermCountVal*30;
+                }
+
+                for (var i = 0; i < colArray.length; i++) {
+
+                    var colSummVal = parseFloat($(colArray[i]).find('.col-summ .count').text().replace(/\s/g, '')),
+                        colTermVal = parseFloat($(colArray[i]).find('.col-term .count-to').text().replace(/\s/g, '')),
+                        colwithDrawalVal = $(colArray[i]).data('withdrawal');
+
+                    if ((colSummVal < inputSumFromVal || colSummVal > inputSumToVal) || (inputTerm > colTermVal) || (inputWithDrawalVal !== 'Any' && inputWithDrawalVal !== colwithDrawalVal)) {
+                        $(colArray[i]).hide();
+                    } else {
+                        $(colArray[i]).show();
+                    }
+                }
+
 
                 colArray.insert(4, advItem);
 
@@ -525,6 +587,10 @@ $(document).ready(function () {
                     $(this).removeClass('from-max');
                     $(this).addClass('from-min');
                 }
+            });
+
+            calcFormButton.click(function () {
+                sortByCalcForm();
             });
 
             catalogItem.each(function () {
