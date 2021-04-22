@@ -89,89 +89,92 @@ $(document).ready(function () {
     // form-calc slider
     $(function () {
         var stepsSlider = document.getElementById('calc-slider');
-        var input0 = document.getElementById('input-calc-1');
-        var input1 = document.getElementById('input-calc-2');
-        var inputs = [input0, input1];
 
-        noUiSlider.create(stepsSlider, {
-            start: [0, 100000],
-            connect: true,
-            range: {
-                'min': [0],
-                'max': 100000
-            },
-            step: 500,
-            format: wNumb({
-                decimals: 0,
-            })
-        });
+        if (stepsSlider != null) {
+            var input0 = document.getElementById('input-calc-1');
+            var input1 = document.getElementById('input-calc-2');
+            var inputs = [input0, input1];
 
-        stepsSlider.noUiSlider.on('update', function (values, handle) {
-            inputs[handle].value = values[handle];
-        });
-
-        // Listen to keydown events on the input field.
-        inputs.forEach(function (input, handle) {
-
-            input.addEventListener('change', function () {
-                stepsSlider.noUiSlider.setHandle(handle, this.value);
+            noUiSlider.create(stepsSlider, {
+                start: [0, 100000],
+                connect: true,
+                range: {
+                    'min': [0],
+                    'max': 100000
+                },
+                step: 500,
+                format: wNumb({
+                    decimals: 0,
+                })
             });
 
-            input.addEventListener('keydown', function (e) {
-
-                var values = stepsSlider.noUiSlider.get();
-                var value = Number(values[handle]);
-
-                // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
-                var steps = stepsSlider.noUiSlider.steps();
-
-                // [down, up]
-                var step = steps[handle];
-
-                var position;
-
-                // 13 is enter,
-                // 38 is key up,
-                // 40 is key down.
-                switch (e.which) {
-
-                    case 13:
-                        stepsSlider.noUiSlider.setHandle(handle, this.value);
-                        break;
-
-                    case 38:
-
-                        // Get step to go increase slider value (up)
-                        position = step[1];
-
-                        // false = no step is set
-                        if (position === false) {
-                            position = 1;
-                        }
-
-                        // null = edge of slider
-                        if (position !== null) {
-                            stepsSlider.noUiSlider.setHandle(handle, value + position);
-                        }
-
-                        break;
-
-                    case 40:
-
-                        position = step[0];
-
-                        if (position === false) {
-                            position = 1;
-                        }
-
-                        if (position !== null) {
-                            stepsSlider.noUiSlider.setHandle(handle, value - position);
-                        }
-
-                        break;
-                }
+            stepsSlider.noUiSlider.on('update', function (values, handle) {
+                inputs[handle].value = values[handle];
             });
-        });
+
+            // Listen to keydown events on the input field.
+            inputs.forEach(function (input, handle) {
+
+                input.addEventListener('change', function () {
+                    stepsSlider.noUiSlider.setHandle(handle, this.value);
+                });
+
+                input.addEventListener('keydown', function (e) {
+
+                    var values = stepsSlider.noUiSlider.get();
+                    var value = Number(values[handle]);
+
+                    // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+                    var steps = stepsSlider.noUiSlider.steps();
+
+                    // [down, up]
+                    var step = steps[handle];
+
+                    var position;
+
+                    // 13 is enter,
+                    // 38 is key up,
+                    // 40 is key down.
+                    switch (e.which) {
+
+                        case 13:
+                            stepsSlider.noUiSlider.setHandle(handle, this.value);
+                            break;
+
+                        case 38:
+
+                            // Get step to go increase slider value (up)
+                            position = step[1];
+
+                            // false = no step is set
+                            if (position === false) {
+                                position = 1;
+                            }
+
+                            // null = edge of slider
+                            if (position !== null) {
+                                stepsSlider.noUiSlider.setHandle(handle, value + position);
+                            }
+
+                            break;
+
+                        case 40:
+
+                            position = step[0];
+
+                            if (position === false) {
+                                position = 1;
+                            }
+
+                            if (position !== null) {
+                                stepsSlider.noUiSlider.setHandle(handle, value - position);
+                            }
+
+                            break;
+                    }
+                });
+            });
+        }
     });
 
     //header menu
@@ -359,11 +362,11 @@ $(document).ready(function () {
             inputWithDrawal = calcForm.find('[name="form-calc-withdrawal"]'),
             calcFormButton = calcForm.find('.form__button .link');
 
-            $('[name="form-calc-term-count"]').bind("change keyup input click", function() {
-                if (this.value.match(/[^0-9]/g)) {
-                    this.value = this.value.replace(/[^0-9]/g, '');
-                }
-            });
+        $('[name="form-calc-term-count"]').bind("change keyup input click", function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            }
+        });
 
         catalog.each(function () {
             var catalogContent = $(this).find('.catalog__content'),
@@ -508,15 +511,6 @@ $(document).ready(function () {
             function sortByCalcForm() {
                 colArray.splice(4, 1);
 
-                /*colArray.sort(function (a, b) {
-                    a = parseFloat($(a).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(a).find('.col-term .count-from').text().replace(/\s/g, ''));
-                    b = parseFloat($(b).find('.col-term .count-to').text().replace(/\s/g, '')) - parseFloat($(b).find('.col-term .count-from').text().replace(/\s/g, ''));
-
-                    return a === b
-                        ? 0
-                        : a > b ? 1 : -1
-                }); */
-
                 var inputSumFromVal = calcForm.find('[name="calc-sum-from"]').val(),
                     inputSumToVal = calcForm.find('[name="calc-sum-to"]').val(),
                     inputTermCountVal = calcForm.find('[name="form-calc-term-count"]').val(),
@@ -527,9 +521,9 @@ $(document).ready(function () {
                 if (inputTermValueVal === 'Day' && inputTermCountVal > 0) {
                     inputTerm = inputTermCountVal;
                 } else if (inputTermValueVal === 'Week' && inputTermCountVal > 0) {
-                    inputTerm = inputTermCountVal*7;
+                    inputTerm = inputTermCountVal * 7;
                 } else if (inputTermValueVal === 'Month' && inputTermCountVal > 0) {
-                    inputTerm = inputTermCountVal*30;
+                    inputTerm = inputTermCountVal * 30;
                 }
 
                 for (var i = 0; i < colArray.length; i++) {
@@ -604,5 +598,42 @@ $(document).ready(function () {
                 });
             });
         });
+    });
+
+
+    //news items
+    $(function () {
+        var newsWrapper = $('.news-wrapper');
+
+        if (newsWrapper != null) {
+
+            newsWrapper.each(function () {
+                var currentWrapper = $(this),
+                    newsItem = $(this).find('.news__item'),
+                    newsButton = $(this).parent().find('.news__button .link');
+
+                if (newsItem.length < 6) {
+                    newsButton.parent().hide();
+                }
+
+                for (var i = 0; i < newsItem.length; i++) {
+                    if (i > 5) {
+                        $(newsItem[i]).addClass('-hidden-item');
+                    }
+                }
+
+                newsButton.click(function () {
+                    currentWrapper.find('.-hidden-item').fadeToggle();
+
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).text('Читать еще новости');
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).text('Скрыть новости');
+                    }
+                });
+            });
+        }
     });
 });

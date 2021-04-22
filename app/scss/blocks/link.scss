@@ -1,4 +1,46 @@
 .link {
+
+  &.link-white-gray {
+    color: #979995;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    justify-content: center;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #EFF3F6;
+    box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
+    border-radius: 10px;
+
+    &:hover {
+      background: $primaryColor;
+      border: 1px $primaryColor solid;
+      color: #fff;
+      box-shadow: none;
+
+      .icon {
+        color: #fff;
+      }
+    }
+
+    .icon {
+      margin-right: 15px;
+      color: $primaryColor;
+    }
+
+    @media (max-width: $bpPhone) {
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+      display: flex;
+      width: 100%;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &.link-text-primary {
     color: $primaryColor;
     display: inline-flex;

@@ -1,0 +1,139 @@
+.news-block {
+  .news {
+    &-count-info {
+      margin-bottom: 25px;
+
+      .text {
+        font-size: 14px;
+        color: #B6B6B6;
+      }
+    }
+
+    &-wrapper {
+      margin: 0 -12px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #EFF3F6;
+      padding-bottom: 20px;
+    }
+
+    &__item {
+      width: calc(50% - 24px);
+      margin: 0 12px 24px;
+
+      &:hover {
+        .item__image {
+          .image {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+
+        .item__title {
+          .text {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &.-hidden-item {
+        display: none;
+      }
+
+      .item {
+
+        &__image {
+          position: relative;
+          padding-top: 44%;
+          border-radius: 10px;
+          overflow: hidden;
+
+          .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            min-width: 100%;
+            max-width: 10000%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            transition: .2s;
+          }
+        }
+
+        &__content {
+          margin-top: 15px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          @media (max-width: $bpMobile) {
+            margin-top: 12px;
+          }
+          @media (max-width: $bpPhone) {
+            margin-top: 7px;
+          }
+        }
+
+        &__title {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .text {
+            font-size: 18px;
+            font-weight: 800;
+          }
+
+          @media (max-width: $bpMobile) {
+            margin-bottom: 12px;
+            .text {
+              font-size: 16px;
+            }
+          }
+
+          @media (max-width: $bpPhone) {
+            margin-bottom: 7px;
+            .text {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &__info {
+          font-size: 14px;
+          color: #B6B6B6;
+          display: flex;
+
+          .info-item {
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          @media (max-width: $bpMobile) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      @media (max-width: $bpPhone) {
+        width: calc(100% - 24px);
+      }
+    }
+
+    &__button {
+      text-align: center;
+
+      .link {
+        width: 244px;
+        margin: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
