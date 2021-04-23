@@ -1,112 +1,199 @@
 .recommend-block {
   margin-top: 24px;
 
-  .recommend {
-    &-wrapper {
-      display: flex;
-      margin: 0 -12px;
-      overflow-x: auto;
-    }
+  &.recommend-news {
+    .recommend {
+      &-wrapper {
+        display: flex;
+        margin: 0 -12px;
+        overflow-x: auto;
+      }
 
-    &__item {
-      width: calc(33.3333% - 24px);
-      margin: 0 12px;
-      min-width: 236px;
-      flex: 0 0 auto;
+      &__item {
+        width: calc(33.3333% - 24px);
+        margin: 0 12px;
+        min-width: 236px;
+        flex: 0 0 auto;
 
-      &:hover {
-        .item__image {
-          .image {
-            transform: translate(-50%, -50%) scale(1.1);
+        &:hover {
+          .item__image {
+            .image {
+              transform: translate(-50%, -50%) scale(1.1);
+            }
+          }
+
+          .item__title {
+            .text {
+              text-decoration: underline;
+            }
           }
         }
 
-        .item__title {
-          .text {
-            text-decoration: underline;
+        .item {
+
+          &__image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            padding-top: 40%;
+
+            .image {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              height: 100%;
+              min-width: 100%;
+              max-width: 100000%;
+              transform: translate(-50%, -50%);
+              transition: .2s;
+              z-index: 1;
+            }
+          }
+
+          &__content {
+            margin-top: 15px;
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            @media (max-width: $bpMobile) {
+              margin-top: 12px;
+            }
+
+            @media (max-width: $bpPhone) {
+              margin-top: 7px;
+            }
+          }
+
+          &__title {
+            margin-bottom: 15px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .text {
+              font-size: 18px;
+              font-weight: 800;
+            }
+
+            @media (max-width: $bpMobile) {
+              margin-bottom: 12px;
+              .text {
+                font-size: 16px;
+              }
+            }
+
+            @media (max-width: $bpPhone) {
+              margin-bottom: 7px;
+              .text {
+                font-size: 14px;
+              }
+            }
+          }
+
+          &__info {
+            font-size: 14px;
+            color: #B6B6B6;
+            display: flex;
+
+            .info-item {
+              margin-right: 10px;
+
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+
+            @media (max-width: $bpMobile) {
+              font-size: 12px;
+            }
           }
         }
       }
+    }
+  }
 
-      .item {
+  &.recommend-items {
+    .recommend {
 
-        &__image {
-          position: relative;
-          overflow: hidden;
-          border-radius: 10px;
-          padding-top: 40%;
+      &-wrapper {
+        margin: 0 -12px -30px;
+        display: flex;
 
-          .image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 100%;
-            min-width: 100%;
-            max-width: 100000%;
-            transform: translate(-50%, -50%);
-            transition: .2s;
-            z-index: 1;
-          }
+        @media (min-width: $bpMobile + 1) {
+          overflow-x: auto;
         }
 
-        &__content {
-          margin-top: 15px;
+        @media (max-width: $bpMobile) {
+          flex-wrap: wrap;
+        }
+      }
 
-          &:first-child {
-            margin-top: 0;
-          }
+      &__item {
+        width: calc(25% - 24px);
+        margin: 0 12px 30px;
+        background: #FFFFFF;
+        box-shadow: 0 0 10px rgba(180, 180, 180, 0.15);
+        border-radius: 10px;
 
-          @media (max-width: $bpMobile) {
-            margin-top: 12px;
-          }
-
-          @media (max-width: $bpPhone) {
-            margin-top: 7px;
-          }
+        @media (min-width: $bpMobile + 1) {
+          min-width: 280px;
         }
 
-        &__title {
-          margin-bottom: 15px;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          .text {
-            font-size: 18px;
-            font-weight: 800;
-          }
-
-          @media (max-width: $bpMobile) {
-            margin-bottom: 12px;
-            .text {
-              font-size: 16px;
-            }
-          }
-
-          @media (max-width: $bpPhone) {
-            margin-bottom: 7px;
-            .text {
-              font-size: 14px;
-            }
-          }
+        @media (max-width: $bpMobile) {
+          width: calc(50% - 24px);
         }
 
-        &__info {
-          font-size: 14px;
-          color: #B6B6B6;
-          display: flex;
+        @media (max-width: 600px) {
+          width: calc(100% - 24px);
+        }
 
-          .info-item {
-            margin-right: 10px;
+        .item {
 
-            &:last-child {
-              margin-right: 0;
-            }
+          &__image {
+            width: 105px;
+            margin-right: 15px;
           }
 
-          @media (max-width: $bpMobile) {
+          &__info {
             font-size: 12px;
+            text-align: right;
+
+            .count {
+              font-weight: 800;
+              display: block;
+            }
+
+            .text {
+              display: block;
+              color: rgba($textColor, .65);
+            }
+          }
+
+          &__content {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #EFF3F6;
+
+            @media (max-width: $bpMobile) {
+              padding: 15px;
+            }
+          }
+
+          &__bottom {
+            padding: 20px;
+
+            .link {
+              width: 100%;
+            }
+
+            @media (max-width: $bpPhone) {
+              padding: 15px;
+            }
           }
         }
       }

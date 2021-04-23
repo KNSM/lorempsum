@@ -4,8 +4,15 @@
   max-width: calc(100% - 360px);
 
   @media (max-width: $bpTablet) {
-    max-width: 100%;
+    max-width: calc(100% - 30px);
     width: 100%;
+  }
+
+  .type-news-detail & {
+    width: 630px;
+    max-width: 100%;
+    margin: 0 auto 50px;
+    flex: 0 1 auto;
   }
 
   .table-comparison-block {
@@ -159,183 +166,39 @@
     }
   }
 
-  .reviews-block {
+  .section-how .list-checked {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    margin: 24px -12px -24px;
 
-    .review {
-      &__item {
-        width: 50%;
-        padding: 20px 25px;
-        border-right: 2px solid #EFF3F6;
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        min-width: 236px;
+    .list__item {
+      width: calc(33.3333% - 24px);
+      margin: 0 12px 24px;
 
-        &:last-child {
-          border-right: none;
-        }
-
-        @media (max-width: $bpMobile) {
-          padding: 20px;
-          width: calc(50% - 16px);
-          margin: 0 8px;
-          border-right: none;
-          border-radius: 25px;
-        }
+      @media (max-width: $bpMobile ){
+        width: calc(50% - 24px);
       }
 
-      &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 25px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .review__date {
-          margin-right: 10px;
-
-          .text {
-            color: rgba($textColor, .5);
-          }
-        }
-
-        .review__rating {
-          display: flex;
-          align-items: center;
-
-          .icon {
-            color: #FFEC19;
-            font-size: 15px;
-            margin-right: 15px;
-          }
-
-          .count {
-            color: rgba($textColor, .5);
-          }
-        }
-
-        @media (max-width: $bpMobile) {
-          margin-bottom: 30px;
-        }
-        @media (max-width: $bpPhone) {
-          margin-bottom: 25px;
-        }
+      @media (max-width: $bpPhone) {
+        width: calc(100% - 24px);
       }
 
-      &__content {
-        flex: 1 1 auto;
-
-        .review__title {
-          margin-bottom: 15px;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          .text {
-            font-weight: 800;
-            font-size: 16px;
-          }
-        }
-
-        .review__text {
-          position: relative;
-
-          .link-wrapper {
-            position: absolute;
-            background: #fff;
-            bottom: 0;
-            right: 0;
-            display: flex;
-
-            .dotted {
-              padding: 0 5px;
-            }
-
-            &.-hidden {
-              display: none;
-            }
-          }
-
-          .text {
-            line-height: 1.6;
-          }
-        }
+      &:last-child {
+        margin: 0 12px 24px;
       }
+    }
+  }
 
-      &__footer {
-        margin-top: 35px;
+  .section-map .image-map {
+    display: flex;
+    margin: 24px -25px -25px;
 
-        &:first-child {
-          margin-top: 0;
-        }
+    @media (max-width: $bpMobile) {
+      margin: 20px -20px -20px;
+    }
 
-        .review__info {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          margin: 0 -15px -10px;
-
-          .info-item {
-            display: flex;
-            align-items: center;
-            margin: 0 15px 10px;
-
-            .icon {
-              margin-right: 15px;
-            }
-
-            .icon, .text {
-              ;
-              color: #B6B6B6;
-            }
-          }
-        }
-
-        @media (max-width: $bpMobile) {
-          margin-top: 45px;
-
-          .review__info {
-            margin: 0 -10px -10px;
-
-            .info-item {
-              margin: 0 10px 10px;
-
-              .icon {
-                margin-right: 10px;
-              }
-
-              .icon, .text {
-                font-size: 14px;
-              }
-            }
-          }
-        }
-        @media (max-width: $bpPhone) {
-          margin-top: 30px;
-
-          .review__info {
-            margin: 0 -5px -10px;
-
-            .info-item {
-              margin: 0 5px 10px;
-
-              .icon {
-                margin-right: 5px;
-              }
-
-              .icon, .text {
-                font-size: 12px;
-              }
-            }
-          }
-        }
-      }
+    @media (max-width: $bpPhone) {
+      margin: 15px -15px 15px;
     }
   }
 }

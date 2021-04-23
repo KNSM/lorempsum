@@ -1,7 +1,11 @@
-.main {
-  &-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.type-news-detail {
+  .main-wrapper {
+    margin: 0;
   }
 }

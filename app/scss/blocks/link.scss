@@ -1,5 +1,13 @@
 .link {
 
+  &.link-text-gray {
+    color: #858585;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &.link-white-gray {
     color: #979995;
     display: inline-flex;
@@ -11,6 +19,7 @@
     border: 1px solid #EFF3F6;
     box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
     border-radius: 10px;
+    font-weight: 700;
 
     &:hover {
       background: $primaryColor;
@@ -74,7 +83,7 @@
     background: #fff;
     border: 1px solid #EFF3F6;
     border-radius: 10px;
-    box-shadow: 0 0 20px #BFDF9F;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
 
     &:hover {
       background: $primaryColor;

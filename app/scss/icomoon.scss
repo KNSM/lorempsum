@@ -90,5 +90,22 @@
   &.icon-eye:before {
     content: "\e914";
   }
-
+  &.icon-dislike:before {
+    content: "\e915";
+  }
+  &.icon-like:before {
+    content: "\e918";
+  }
+  &.icon-like-filled:before {
+    content: "\e916";
+  }
+  &.icon-dislike-filled:before {
+    content: "\e919";
+  }
+  &.icon-quotes:before {
+    content: "\e917";
+  }
+  &.icon-clock:before {
+    content: "\e91a";
+  }
 }

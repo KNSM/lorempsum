@@ -9,11 +9,11 @@
     margin-bottom: 30px;
   }
   .list {
-    display: flex;
-
     &__item {
+      display: inline;
       opacity: .6;
       color: $darkColor;
+      line-height: 1.6;
 
       &:after {
         content: '/';
@@ -31,6 +31,19 @@
       &:not(:last-child):hover {
         color: $primaryColor;
       }
+    }
+  }
+}
+
+.type-item-detail {
+  .breadcrumbs {
+    margin: 30px 0 60px;
+
+    @media (max-width: $bpMobile) {
+      margin: 25px 0 40px;
+    }
+    @media (max-width: $bpPhone) {
+      margin: 25px 0;
     }
   }
 }

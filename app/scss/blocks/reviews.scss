@@ -1,0 +1,354 @@
+.reviews-block {
+
+  &.reviews-main {
+    display: flex;
+    overflow-x: auto;
+
+    .review {
+      &__item {
+        width: 50%;
+        padding: 20px 25px;
+        border-right: 2px solid #EFF3F6;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        min-width: 236px;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        @media (max-width: $bpMobile) {
+          padding: 20px;
+          width: calc(50% - 16px);
+          margin: 0 8px;
+          border-right: none;
+          border-radius: 25px;
+        }
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .review__date {
+          margin-right: 10px;
+
+          .text {
+            color: rgba($textColor, .5);
+          }
+        }
+
+        .review__rating {
+          display: flex;
+          align-items: center;
+
+          .icon {
+            color: #FFEC19;
+            font-size: 15px;
+            margin-right: 15px;
+          }
+
+          .count {
+            color: rgba($textColor, .5);
+          }
+        }
+
+        @media (max-width: $bpMobile) {
+          margin-bottom: 30px;
+        }
+        @media (max-width: $bpPhone) {
+          margin-bottom: 25px;
+        }
+      }
+
+      &__content {
+        flex: 1 1 auto;
+
+        .review__title {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .text {
+            font-weight: 800;
+            font-size: 16px;
+          }
+        }
+
+        .review__text {
+          position: relative;
+
+          .link-wrapper {
+            position: absolute;
+            background: #fff;
+            bottom: 0;
+            right: 0;
+            display: flex;
+
+            .dotted {
+              padding: 0 5px;
+            }
+
+            &.-hidden {
+              display: none;
+            }
+          }
+
+          .text {
+            line-height: 1.6;
+          }
+        }
+      }
+
+      &__footer {
+        margin-top: 35px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .review__info {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          margin: 0 -15px -10px;
+
+          .info-item {
+            display: flex;
+            align-items: center;
+            margin: 0 15px 10px;
+
+            .icon {
+              margin-right: 15px;
+            }
+
+            .icon, .text {;
+              color: #B6B6B6;
+            }
+          }
+        }
+
+        @media (max-width: $bpMobile) {
+          margin-top: 45px;
+
+          .review__info {
+            margin: 0 -10px -10px;
+
+            .info-item {
+              margin: 0 10px 10px;
+
+              .icon {
+                margin-right: 10px;
+              }
+
+              .icon, .text {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        @media (max-width: $bpPhone) {
+          margin-top: 30px;
+
+          .review__info {
+            margin: 0 -5px -10px;
+
+            .info-item {
+              margin: 0 5px 10px;
+
+              .icon {
+                margin-right: 5px;
+              }
+
+              .icon, .text {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.reviews-item {
+
+    .reviews {
+      &__header {
+        background: #FFFFFF;
+        border: 1px solid #EFF3F6;
+        border-radius: 30px;
+        width: 100%;
+        padding: 25px;
+        margin-bottom: 40px;
+
+        @media (max-width: $bpMobile) {
+          padding: 20px;
+          border-radius: 25px;
+          margin-bottom: 35px;
+        }
+
+        @media (max-width: $bpPhone) {
+          padding: 15px;
+          border-radius: 20px;
+          margin-bottom: 30px;
+        }
+      }
+
+      &__wrapper {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &__item {
+        background: #FFFFFF;
+        border: 1px solid #EFF3F6;
+        border-radius: 30px;
+        margin-bottom: 40px;
+        padding: 25px;
+
+        &.-hidden-item {
+          display: none;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: $bpMobile) {
+          margin-bottom: 30px;
+          padding: 20px;
+          border-radius: 25px;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin-bottom: 25px;
+          padding: 15px;
+          border-radius: 20px;
+        }
+
+        .item {
+
+          &__info {
+            margin: 0 -12px 25px;
+            display: flex;
+            align-items: center;
+
+            @media (max-width: $bpMobile) {
+              margin-bottom: 20px;
+            }
+
+            @media (max-width: $bpPhone) {
+              margin-bottom: 15px;
+            }
+
+            .info-item {
+              margin: 0 12px;
+              display: flex;
+              align-items: center;
+              color: #60635D;
+
+              .icon {
+                font-size: 10px;
+                margin-right: 10px;
+              }
+            }
+          }
+
+          &__rating {
+            margin-bottom: 25px;
+            display: flex;
+
+            @media (max-width: $bpMobile) {
+              margin-bottom: 20px;
+            }
+
+            @media (max-width: $bpPhone) {
+              margin-bottom: 15px;
+            }
+            .rating-count {
+              margin-right: 25px;
+              color: #60635D;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          &__title {
+            margin-bottom: 25px;
+
+            .text {
+              font-size: 18px;
+              font-weight: 800;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            @media (max-width: $bpMobile) {
+              margin-bottom: 20px;
+
+              .text {
+                font-size: 16px;
+              }
+            }
+
+            @media (max-width: $bpPhone) {
+              margin-bottom: 15px;
+            }
+          }
+
+          &__text {
+            margin-bottom: 25px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .text {
+              line-height: 1.6;
+            }
+
+            @media (max-width: $bpMobile) {
+              margin-bottom: 20px;
+            }
+            @media (max-width: $bpPhone) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+
+      &__button {
+        margin-bottom: 40px;
+        text-align: center;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: $bpMobile) {
+          margin-bottom: 35px;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

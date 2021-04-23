@@ -194,6 +194,12 @@ $(document).ready(function () {
         $(this).parent().toggleClass('-active');
     });
 
+    //sidebar-item detail-info
+    $('.sidebar-item .sidebar__arrow').click(function () {
+        $(this).parent().find('.detail__list').slideToggle();
+        $(this).parent().toggleClass('-active');
+    });
+
     //header-scroll
     $(window).scroll(function () {
         var scrollTop = $(window).scrollTop(),
@@ -585,6 +591,8 @@ $(document).ready(function () {
 
             calcFormButton.click(function () {
                 sortByCalcForm();
+                var destination = $('#section-catalog').offset().top;
+                $('html,body').animate({scrollTop: destination - 80}, 1100);
             });
 
             catalogItem.each(function () {
@@ -635,5 +643,185 @@ $(document).ready(function () {
                 });
             });
         }
+    });
+
+
+    //form comments
+    $(function () {
+        var commentsWrapper = $('.comments-wrapper');
+
+        commentsWrapper.each(function () {
+            var currentCommentsWrapper = $(this),
+                commentsItem = $(this).find('.comments__item');
+
+            commentsItem.each(function () {
+                var ratingItem = $(this).find('.rating-item'),
+                    commentFormOpener = $(this).find('.control-form-button .link'),
+                    commentForm = $(this).find('.form-comments-answer');
+
+                ratingItem.click(function () {
+                    ratingItem.removeClass('-active');
+                    $(this).addClass('-active');
+                });
+
+                commentFormOpener.click(function () {
+                    commentForm.fadeToggle();
+
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).text('Ответить');
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).text('Скрыть');
+                    }
+                });
+            });
+        });
+    });
+
+    //reviews-main items
+    $(function () {
+        var reviewsWrapper = $('.reviews-item .reviews__wrapper');
+
+        if (reviewsWrapper != null) {
+
+            reviewsWrapper.each(function () {
+                var currentWrapper = $(this),
+                    reviewsItem = $(this).find('.reviews__item'),
+                    reviewsButton = $(this).parent().find('.reviews__button .link');
+
+                if (reviewsItem.length < 3) {
+                    reviewsButton.parent().hide();
+                }
+
+                for (var i = 0; i < reviewsItem.length; i++) {
+                    if (i > 2) {
+                        $(reviewsItem[i]).addClass('-hidden-item');
+                    }
+                }
+
+                reviewsButton.click(function () {
+                    currentWrapper.find('.-hidden-item').fadeToggle();
+
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).text('Смотреть все отзывы');
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).text('Скрыть отзывы');
+                    }
+                });
+            });
+        }
+    });
+
+    //list-stars-touch
+    $(function () {
+        var listStarsTouch = $('.list-stars-touch');
+
+        listStarsTouch.each(function () {
+            var currentList = $(this),
+                listItem = currentList.find('.list__item');
+
+            for (var i = 0; i < listItem.length; i++) {
+                $(listItem[i]).mouseover(function () {
+                    var listItemActive = listItem.slice(0, ($(this).index() + 1));
+                    if (!listItemActive.hasClass('-active-clicked')) {
+                        listItemActive.addClass('-active');
+                    }
+                });
+                $(listItem[i]).mouseout(function () {
+                    var listItemActive = listItem.slice(0, ($(this).index() + 1));
+                    if (!listItemActive.hasClass('-active-clicked')) {
+                        listItemActive.removeClass('-active');
+                    }
+                });
+
+                $(listItem[i]).click(function () {
+                    var listItemActive = listItem.slice(0, ($(this).index() + 1)),
+                        listItemDisactive = listItem.slice(($(this).index() + 1), i);
+
+                    listItemActive.addClass('-active -active-clicked');
+                    listItemDisactive.removeClass('-active -active-clicked');
+                });
+            }
+        });
+    });
+
+    //reviews textarea
+    $(function () {
+        var reviewsForm = $('.form.form-reviews');
+
+        if (reviewsForm != null) {
+            reviewsForm.each(function () {
+                var textarea = $(this).find('.input-textarea'),
+                    textareaCount = $(this).find('.textarea-count .count'),
+                    count = 0,
+                    maxlimit = 1000;
+
+                textarea.keyup(function () {
+                    for (var i = 0; i < textarea.length; i++) {
+                        if (textarea[i].value.length > maxlimit) {
+                            textarea[i].value = textarea[i].value.substring(0, maxlimit);
+                        } else {
+                            count = textarea[i].value.length;
+                            textareaCount.text(count);
+                        }
+                    }
+                });
+            })
+        }
+    });
+
+    //item-detail catalog-popular
+    $(function () {
+        var catalogWrapper = $('.catalog-popular .catalog__wrapper');
+
+        if (catalogWrapper != null) {
+
+            catalogWrapper.each(function () {
+                var currentWrapper = $(this),
+                    catalogItem = $(this).find('.catalog__item'),
+                    catalogButton = $(this).parent().find('.catalog__button .link');
+
+                if (catalogItem.length < 6) {
+                    catalogButton.parent().hide();
+                }
+
+                for (var i = 0; i < catalogItem.length; i++) {
+                    if (i > 6) {
+                        $(catalogItem[i]).addClass('-hidden-item');
+                    }
+                }
+
+                catalogButton.click(function () {
+                    currentWrapper.find('.-hidden-item').fadeToggle();
+
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).text('Смотреть все займы');
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).text('Скрыть займы');
+                    }
+                });
+            });
+        }
+    });
+
+
+    // anchor link
+    $(function () {
+        var anchorLink = $("a.anchor-link[href^='#']");
+        anchorLink.click(function () {
+            var elementClick = $(this).attr("href");
+            if ($(elementClick).length) {
+                var destination = $(elementClick).offset().top;
+
+                $('html,body').animate({scrollTop: destination - 80}, 1100);
+
+                return false;
+            }
+        });
     });
 });

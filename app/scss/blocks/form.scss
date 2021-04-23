@@ -1,5 +1,115 @@
 .form {
 
+  &.form-reviews {
+    background: #FFFFFF;
+    border: 1px solid #EFF3F6;
+    border-radius: 30px;
+    padding: 25px;
+    color: #60635D;
+
+    .form__title {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      @media (max-width: $bpMobile) {
+        margin-bottom: 20px;
+
+        .text {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: $bpPhone) {
+        margin-bottom: 15px;
+
+        .text {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .form__button {
+      margin-top: 25px;
+
+      @media (max-width: $bpMobile) {
+        margin-top: 20px;
+      }
+
+      @media (max-width: $bpPhone) {
+        margin-top: 15px;
+      }
+    }
+
+    .input__field {
+      width: calc(33.3333% - 24px);
+      margin: 0 12px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @media (max-width: $bpMobile) {
+        width: calc(50% - 24px);
+      }
+
+      @media (max-width: $bpPhone) {
+        width: calc(100% - 24px);
+      }
+
+      &-title {
+        width: calc(100% - 24px);
+        margin: 0 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &.field-textarea, &.field-rating {
+        width: calc(100% - 24px);
+      }
+
+      &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -12px -24px;
+      }
+
+      .input-text {
+        background: #FFFFFF;
+        height: 40px;
+        padding: 0 15px;
+        border: 1px solid #EFF3F6;
+        border-radius: 10px;
+
+        &:focus {
+          border: 1px solid #BFC3C6;
+        }
+      }
+
+      .input-textarea {
+        background: #FFFFFF;
+        height: 160px;
+        resize: none;
+        border: 1px solid #EFF3F6;
+        border-radius: 10px;
+        padding: 15px;
+        font-family: 'Lato' !important;
+        font-size: 14px !important;
+
+        &:focus {
+          border: 1px solid #BFC3C6;
+        }
+      }
+    }
+  }
+
   &.form-calc {
     padding: 20px;
 
@@ -143,6 +253,121 @@
 
     .noUi-connect {
       background: #EFF3F6;
+    }
+  }
+
+  &.form-comments-answer {
+    margin-top: 25px;
+    display: none;
+
+    .input__field {
+      margin-bottom: 15px;
+
+      &-wrapper {
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .input {
+        width: 100%;
+        border: 1px solid #EFF3F6;
+        border-radius: 5px;
+        font-size: 14px;
+
+        &:focus {
+          border: 1px solid #bbbfc2;
+        }
+
+        &.input-textarea {
+          height: 70px;
+          padding: 15px;
+          resize: none;
+          font: 400 14px 'Lato' !important;
+
+          &::placeholder {
+            color: #B6B6B6;
+            font-family: 'Lato';
+          }
+        }
+      }
+    }
+  }
+
+  &.form-comments {
+    background: #FFFFFF;
+    border: 1px solid #EFF3F6;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .form__title {
+      margin-bottom: 25px;
+
+      .text {
+        font-size: 18px;
+        color: #373D4F;
+        font-weight: 800;
+      }
+    }
+
+    .input__field {
+      margin-bottom: 15px;
+
+      &-wrapper {
+        margin-bottom: 25px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .input {
+        width: 100%;
+        border: 1px solid #EFF3F6;
+        border-radius: 5px;
+        font-size: 14px;
+
+        &:focus {
+          border: 1px solid #bbbfc2;
+        }
+
+        &.input-text {
+          height: 40px;
+          padding: 0 15px;
+
+          &::placeholder {
+            color: #B6B6B6;
+            font-family: 'Lato';
+          }
+        }
+
+        &.input-textarea {
+          height: 70px;
+          padding: 15px;
+          resize: none;
+          font: 400 14px 'Lato' !important;
+
+          &::placeholder {
+            color: #B6B6B6;
+            font-family: 'Lato';
+          }
+        }
+      }
     }
   }
 }

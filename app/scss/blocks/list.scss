@@ -1,5 +1,103 @@
 .list {
 
+  &.list-checked {
+
+    .list__item {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: '\e911';
+        font-family: 'icomoon';
+        color: $primaryColor;
+        margin-right: 25px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.list-stars {
+    display: flex;
+
+    .list__item {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .icon {
+        color: #FFEC19;
+
+        &.-gray {
+          color: #EEF2F5;
+        }
+      }
+    }
+  }
+
+  &.list-stars-touch {
+    display: flex;
+
+    .list__item {
+      margin-right: 8px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .icon {
+        color: #EEF2F5;
+        font-size: 24px;
+      }
+
+      &.-active {
+        .icon {
+          color: #FFEC19;
+        }
+      }
+    }
+  }
+
+  &.list-count {
+    .list__item {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin: 0 -8px 35px;
+
+      @media (max-width: $bpMobile) {
+        margin: 0 -8px 25px;
+      }
+
+      @media (max-width: $bpPhone) {
+        margin: 0 -8px 15px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text, .count {
+        width: calc(50% - 16px);
+        margin: 0 8px;
+      }
+
+      .text {
+        color: #60635D;
+      }
+
+      .count {
+        color: #B6B6B6;
+      }
+    }
+  }
+
   &.list-media-block {
     .list__item {
       margin-bottom: 15px;
@@ -163,7 +261,32 @@
         }
 
         @media (max-width: $bpPhone) {
-          font-size: 14px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &.list-number-primary-dot {
+    counter-reset: li;
+
+    .list__item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        &:before {
+          color: $primaryColor;
+          font-weight: 700;
+          counter-increment: li;
+          content: (counters(li, '. ') '. ');
+        }
+
+        @media (max-width: $bpPhone) {
+          font-size: 12px;
         }
       }
     }
@@ -183,6 +306,31 @@
           width: 5px;
           height: 5px;
           background: $textColor;
+          border-radius: 100%;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          font-size: 2em;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  &.list-dotted-primary {
+    .list__item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        &:before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          background: $primaryColor;
           border-radius: 100%;
           display: inline-block;
           vertical-align: middle;
