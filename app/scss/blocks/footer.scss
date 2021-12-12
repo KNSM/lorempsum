@@ -116,16 +116,6 @@
         }
       }
     }
-
-    @media (max-width: $bpPhone) {
-      .rating-block {
-        .count {
-          .text {
-            font-size: 12px;
-          }
-        }
-      }
-    }
   }
 
   &__media {
@@ -243,16 +233,13 @@
     max-width: 100%;
 
     .text {
-      ;
       color: rgba(0,0,0,.65);
+      font-size: 13px;
     }
-    
+
     @media (max-width: $bpPhone) {
       text-align: center;
-
-      .text {
-        font-size: 14px;
-      }
     }
   }
 }
+

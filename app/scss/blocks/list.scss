@@ -146,7 +146,7 @@
 
       .media-title {
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 800;
         flex: 1 1 auto;
       }
 
@@ -259,10 +259,6 @@
           counter-increment: li;
           content: (counters(li, '.') '. ');
         }
-
-        @media (max-width: $bpPhone) {
-          font-size: 12px;
-        }
       }
     }
   }
@@ -280,13 +276,9 @@
       .text {
         &:before {
           color: $primaryColor;
-          font-weight: 700;
+          font-weight: 800;
           counter-increment: li;
           content: (counters(li, '. ') '. ');
-        }
-
-        @media (max-width: $bpPhone) {
-          font-size: 12px;
         }
       }
     }

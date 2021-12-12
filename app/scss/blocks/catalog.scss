@@ -107,7 +107,7 @@
 
           .text {
             color: $grayColor;
-            font-weight: 700;
+            font-weight: 800;
             transition: .2s;
           }
 
@@ -200,14 +200,12 @@
           font-weight: 800;
 
           .small {
-            font-size: 12px;
-            font-weight: 700;
+            font-weight: 800;
           }
         }
 
         .adv {
           margin-top: 15px;
-          font-size: 12px;
           border-radius: 10px;
           display: flex;
           flex-wrap: wrap;
@@ -237,7 +235,6 @@
           @media (max-width: $bpTablet) {
             display: block;
             margin-bottom: 7px;
-            font-size: 12px;
             color: rgba(0, 0, 0, .7);
           }
         }
@@ -252,7 +249,6 @@
 
         .sup-text {
           margin-bottom: 15px;
-          font-size: 12px;
           color: rgba($textColor, .5);
 
           &:last-child {

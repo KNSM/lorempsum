@@ -9,7 +9,7 @@
   }
 
   .type-news-detail & {
-    width: 630px;
+    width: 770px;
     max-width: 100%;
     margin: 0 auto 50px;
     flex: 0 1 auto;
@@ -84,6 +84,10 @@
         justify-content: space-between;
         overflow: auto;
         padding: 20px 0 0;
+
+        @media (max-width: $bpMobile) {
+          padding: 0;
+        }
       }
 
       &__image {

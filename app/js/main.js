@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     //back to top link
     function backLink() {
-        var showHeight = $('.section-main').outerHeight(true) + $('.section-popular').outerHeight(true),
+        var showHeight = $('html, body').outerHeight(true) / 3,
             backLink = $('.back-to-top');
 
         if ($(window).scrollTop() > showHeight) {

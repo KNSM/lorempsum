@@ -4,7 +4,11 @@
     color: #858585;
     
     &:hover {
-      text-decoration: underline;
+      color: $primaryColor;
+    }
+
+    &:active {
+      color: $primaryColorActive;
     }
   }
 
@@ -19,7 +23,6 @@
     border: 1px solid #EFF3F6;
     box-shadow: 0 0 10px rgba(229, 229, 229, 0.5);
     border-radius: 10px;
-    font-weight: 700;
 
     &:hover {
       background: $primaryColor;
@@ -54,7 +57,6 @@
     color: $primaryColor;
     display: inline-flex;
     align-items: center;
-    text-decoration: underline;
 
     .icon {
       &:first-child {
@@ -67,6 +69,29 @@
 
     &:hover {
       color: $primaryColorHover;
+    }
+
+    &:active {
+      color: $primaryColorActive;
+    }
+  }
+
+  &.link-text-blue {
+    color: #4E99DF;
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+      &:first-child {
+        margin-right: 5px;
+      }
+      &:last-child {
+        margin-left: 5px;
+      }
+    }
+
+    &:hover {
+      color: $primaryColor;
     }
 
     &:active {
@@ -129,6 +154,7 @@
     border: none;
     outline: none;
     cursor: pointer;
+    font-weight: 700;
 
     .icon {
       &:first-child {

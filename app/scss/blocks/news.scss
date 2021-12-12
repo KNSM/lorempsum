@@ -30,7 +30,7 @@
 
         .item__title {
           .text {
-            text-decoration: underline;
+            color: $primaryColor;
           }
         }
       }
@@ -85,6 +85,7 @@
           .text {
             font-size: 18px;
             font-weight: 800;
+            transition: .2s;
           }
 
           @media (max-width: $bpMobile) {
@@ -103,7 +104,7 @@
         }
 
         &__info {
-          font-size: 14px;
+          font-size: 13px;
           color: #B6B6B6;
           display: flex;
 
@@ -113,10 +114,6 @@
             &:last-child {
               margin-right: 0;
             }
-          }
-
-          @media (max-width: $bpMobile) {
-            font-size: 12px;
           }
         }
       }
